@@ -23,15 +23,15 @@ To run project you need to do 3 steps:
 2. To publish database:
     a. simply double click on Phi.MainDatabase/Phi.MainDatabase.publish.xml, choose settings of your database and click Publish.
     b. if you going to use russian lang as part of the system (it supports both english and russian), make sure you have collation Cyrillic_General_CI_AS in your database:
-       SELECT CONVERT (varchar, SERVERPROPERTY('collation'));
+       ! SELECT CONVERT (varchar, SERVERPROPERTY('collation'));
        
        If not, change collaction to Cyrillic_General_CI_AS:
-       ALTER DATABASE DATABASE_NAME COLLATE Cyrillic_General_CI_AS
+       ! ALTER DATABASE DATABASE_NAME COLLATE Cyrillic_General_CI_AS
        
        Or by these commands:
-       ALTER DATABASE DATABASE_NAME SET SINGLE_USER WITH ROLLBACK IMMEDIATE
-       ALTER DATABASE DATABASE_NAME COLLATE Cyrillic_General_CI_AS
-       ALTER DATABASE DATABASE_NAME SET MULTI_USER
+       ! ALTER DATABASE DATABASE_NAME SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+       ! ALTER DATABASE DATABASE_NAME COLLATE Cyrillic_General_CI_AS
+       ! ALTER DATABASE DATABASE_NAME SET MULTI_USER
        
     c. Fill data by running 1 - Initial_data_cities.sql in database
     d. Fill data by running 2 - Initial_data_script.sql in database
