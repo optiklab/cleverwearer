@@ -1,0 +1,27 @@
+﻿@using Phi.MobileWebApp.Resources
+@using Phi.MobileWebApp.Models;
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = GlobalResources.ManageAccountPage;
+}
+<div class="managementAccount">
+    <h4>@ViewBag.Title.</h4>
+
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    @if (ViewBag.HasLocalPassword)
+    {
+        @Html.Partial("_ChangePasswordPartial")
+    }
+    else
+    {
+        @Html.Partial("_SetPasswordPartial")
+    }
+
+    <section id="externalLogins">
+        @Html.Action("RemoveAccountList")
+        @*@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { Action = "LinkLogin", ReturnUrl = ViewBag.ReturnUrl })*@
+    </section>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>

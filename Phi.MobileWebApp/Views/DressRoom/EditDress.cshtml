@@ -1,0 +1,550 @@
+﻿@model Phi.MobileWebApp.Models.ItemViewModel
+@using Phi.MobileWebApp.Resources
+@using Phi.Repository.Extensions
+@{
+    ViewBag.Title = GlobalResources.EditDress;
+}
+<script>
+    var jsError = "@GlobalResources.JSError"
+</script>
+
+<script src="~/Scripts/Common.js?v=3"></script>
+<script src="~/Scripts/DressRoom.js?v=3"></script>
+<script src="~/Scripts/jquery-ui.min-1.11.1.js"></script>
+<script src="~/Scripts/jquery.cookie.js"></script>
+<script>
+    // Select gender
+    $(function () {
+        $("#divGender :button").click(function () {
+            $("#divGender :button").removeClass('active');
+            $(this).addClass('active');
+            if ($(this).children().hasClass('fa-male')) {
+                $("#Gender").val('true');
+                $("#ImageReloaded").val('true');
+            }
+            else {
+                $("#Gender").val('false');
+            }
+        });
+    });
+    // Select temperature factor
+    $(function () {
+        $("#divSuggestionTermsTemperature :button").click(function () {
+            $("#divSuggestionTermsTemperature :button").removeClass('active');
+            $(this).addClass('active');
+            if ($(this).children().hasClass('flaticon-heating3')) {
+                $("#SuggestionTermsTemperature").val(2);
+            }
+            else if ($(this).children().hasClass('flaticon-gloves')) {
+                $("#SuggestionTermsTemperature").val(4);
+            }
+            else if ($(this).children().hasClass('flaticon-black276')) {
+                $("#SuggestionTermsTemperature").val(8);
+            }
+            else if ($(this).children().hasClass('flaticon-short')) {
+                $("#SuggestionTermsTemperature").val(256);
+            }
+            else if ($(this).children().hasClass('flaticon-bikini5')) {
+                $("#SuggestionTermsTemperature").val(512);
+            }
+            else if ($(this).children().hasClass('flaticon-cool5')) {
+                $("#SuggestionTermsTemperature").val(1024);
+            }
+            else if ($(this).children().hasClass('flaticon-electric10')) {
+                $("#SuggestionTermsTemperature").val(2048);
+            }
+        });
+    });
+    // Select additional factor
+    $(function () {
+        $("#divSuggestionTermsAdditional :button").click(function () {
+            $("#divSuggestionTermsAdditional :button").removeClass('active');
+            var currentValue = $("#SuggestionTermsAdditional").val();
+            if ($(this).children().hasClass('flaticon-skidiving')) {
+                if (currentValue == 16)
+                {
+                    $("#SuggestionTermsAdditional").val(0);
+                }
+                else
+                {
+                    $("#SuggestionTermsAdditional").val(16);
+                    $(this).addClass('active');
+                }
+            }
+            else if ($(this).children().hasClass('flaticon-person138')) {
+                if (currentValue == 32) {
+                    $("#SuggestionTermsAdditional").val(0);
+                }
+                else {
+                    $("#SuggestionTermsAdditional").val(32);
+                    $(this).addClass('active');
+                }
+            }
+            else if ($(this).children().hasClass('flaticon-black170')) {
+                if (currentValue == 64) {
+                    $("#SuggestionTermsAdditional").val(0);
+                }
+                else {
+                    $("#SuggestionTermsAdditional").val(64);
+                    $(this).addClass('active');
+                }
+            }
+            else if ($(this).children().hasClass('flaticon-black330')) {
+                if (currentValue == 128) {
+                    $("#SuggestionTermsAdditional").val(0);
+                }
+                else {
+                    $("#SuggestionTermsAdditional").val(128);
+                    $(this).addClass('active');
+                }
+            }
+        });
+    });
+    // Select extra factor
+    $(function () {
+        $("#divSuggestionTermsExtra :button").click(function () {
+            $("#divSuggestionTermsExtra :button").removeClass('active');
+            var currentValue = $("#SuggestionTermsExtra").val();
+            if ($(this).children().hasClass('flaticon-ant1')) {
+                if (currentValue == 4096) {
+                    $("#SuggestionTermsExtra").val(0);
+                }
+                else {
+                    $("#SuggestionTermsExtra").val(4096);
+                    $(this).addClass('active');
+                }
+            }
+            else if ($(this).children().hasClass('flaticon-deer4')) {
+                if (currentValue == 8192) {
+                    $("#SuggestionTermsExtra").val(0);
+                }
+                else {
+                    $("#SuggestionTermsExtra").val(8192);
+                    $(this).addClass('active');
+                }
+            }
+            else if ($(this).children().hasClass('flaticon-home121')) {
+                if (currentValue == 16384) {
+                    $("#SuggestionTermsExtra").val(0);
+                }
+                else {
+                    $("#SuggestionTermsExtra").val(16384);
+                    $(this).addClass('active');
+                }
+            }
+            else if ($(this).children().hasClass('flaticon-radiation2')) {
+                if (currentValue == 32768) {
+                    $("#SuggestionTermsExtra").val(0);
+                }
+                else {
+                    $("#SuggestionTermsExtra").val(32768);
+                    $(this).addClass('active');
+                }
+            }
+        });
+    });
+    // Select action type
+    $(function () {
+        $("#divActionType :button").click(function () {
+            $("#divActionType :button").removeClass('active');
+            $(this).addClass('active');
+
+            var lang = "@GlobalResources.CurrentLang";
+            if ($(this).children().hasClass('flaticon-soccer44')) {
+                $("#ActionTypeId").val((lang == 'en') ? 3 : 4);
+            }
+            else if ($(this).children().hasClass('flaticon-caravan3')) {
+                $("#ActionTypeId").val((lang == 'en') ? 15 : 16);
+            }
+            else if ($(this).children().hasClass('flaticon-tent6')) {
+                $("#ActionTypeId").val((lang == 'en') ? 17 : 18);
+            }
+            else if ($(this).children().hasClass('flaticon-person87')) {
+                $("#ActionTypeId").val((lang == 'en') ? 13 : 14);
+            }
+            else if ($(this).children().hasClass('flaticon-kids1')) {
+                $("#ActionTypeId").val((lang == 'en') ? 11 : 12);
+            }
+            else if ($(this).children().hasClass('flaticon-man77')) {
+                $("#ActionTypeId").val((lang == 'en') ? 9 : 10);
+            }
+            else if ($(this).children().hasClass('flaticon-frontal7')) {
+                $("#ActionTypeId").val((lang == 'en') ? 1 : 2);
+            }
+        });
+    });
+
+    // Select season
+    $(function () {
+        $("#divSeason :button").click(function () {
+            $("#divSeason :button").removeClass('active');
+            $(this).addClass('active');
+            if ($(this).children().hasClass('flaticon-sandals2')) {
+                $("#Season").val(1);
+            }
+            else if ($(this).children().hasClass('flaticon-autumn1')) {
+                $("#Season").val(2);
+            }
+            else if ($(this).children().hasClass('flaticon-christmas144')) {
+                $("#Season").val(3);
+            }
+            else if ($(this).children().hasClass('flaticon-tree86')) {
+                $("#Season").val(4);
+            }
+        });
+    });
+</script>
+<div class="manageDress">
+    <h3>@GlobalResources.EditDress</h3>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false)
+        @Html.HiddenFor(model => model.ImageUrl)
+        <div class="title">@GlobalResources.ImageUrl </div>
+        <div class="dress" ondrop="drop(event);">
+            @if (String.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img class="dress-ico" src="~/img/default_wear/veshalka.png" width="200" height="200" />
+            }
+            else
+            {
+                <img class="dress-ico" src="@Model.ImageUrl" style="max-width:200px; max-height:200px;" />
+            }
+        </div>
+        <div class="inpCont"><input class="btn" id="dress" type="file" /></div>
+
+        <div class="inpCont">
+            <input id="uploadButton" type="button" value="@GlobalResources.UploadButton" />
+        </div>
+
+        <div id="divGender">
+            <div class="title">@GlobalResources.Gender </div>
+            @Html.HiddenFor(model => model.Gender)
+            <div class="btn-group inpCont divGender">
+                @if (Model.Gender.Value)
+                {
+                    <button type="button"><span class="fa fa-female"></span></button>
+                    <button type="button" class="active"><span class="fa fa-male"></span></button>
+                }
+                else
+                {
+                    <button type="button" class="active"><span class="fa fa-female"></span></button>
+                    <button type="button"><span class="fa fa-male"></span></button>
+                }
+            </div>
+        </div>
+
+        <div class="title">@GlobalResources.ItemName * </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.Name)</div>
+
+        <div class="title">@GlobalResources.ItemDescription * </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.Description)</div>
+
+        <div class="title">@GlobalResources.MadeBy </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.MadeBy)</div>
+
+        <div class="title">@GlobalResources.ProvideBy </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.ProvideBy)</div>
+
+        <div class="col-md-9 grayed-text">@GlobalResources.SuggestionFactors</div>
+
+        @Html.HiddenFor(model => model.ActionTypeId)
+        <div id="divActionType">
+            <div class="title">@GlobalResources.ActionType *</div>
+            <div class="btn-group inpCont">
+                @foreach (var actionType in Model.ActionTypes)
+                {
+                    if (actionType.Name.ToLower().Contains("sport") || actionType.Name.ToLower().Contains("спорт"))
+                    {
+                        if (Model.ActionTypeId == 3 || Model.ActionTypeId == 4)
+                        {
+                            <button type="button" title="@actionType.Name" class="active"><span class="glyph-icon flaticon-soccer44"></span></button>
+                        }
+                        else
+                        {
+                            <button type="button" title="@actionType.Name"><span class="glyph-icon flaticon-soccer44"></span></button>
+                        }
+                    }
+                    else if (actionType.Name.ToLower().Contains("road") || actionType.Name.ToLower().Contains("дорож"))
+                    {
+                        if (Model.ActionTypeId == 15 || Model.ActionTypeId == 16)
+                        {
+                            <button type="button" title="@actionType.Name" class="active"><span class="glyph-icon flaticon-caravan3 active"></span></button>
+                        }
+                        else
+                        {
+                            <button type="button" title="@actionType.Name"><span class="glyph-icon flaticon-caravan3"></span></button>
+                        }
+                    }
+                    else if (actionType.Name.ToLower().Contains("camp") || actionType.Name.ToLower().Contains("природ"))
+                    {
+                        if (Model.ActionTypeId == 17 || Model.ActionTypeId == 18)
+                        {
+                            <button type="button" title="@actionType.Name" class="active"><span class="glyph-icon flaticon-tent6 active"></span></button>
+                        }
+                        else
+                        {
+                            <button type="button" title="@actionType.Name"><span class="glyph-icon flaticon-tent6"></span></button>
+                        }
+                    }
+                    else if (actionType.Name.ToLower().Contains("walk") || actionType.Name.ToLower().Contains("прогул"))
+                    {
+                        if (Model.ActionTypeId == 13 || Model.ActionTypeId == 14)
+                        {
+                            <button type="button" title="@actionType.Name" class="active"><span class="glyph-icon flaticon-person87 active"></span></button>
+                        }
+                        else
+                        {
+                            <button type="button" title="@actionType.Name"><span class="glyph-icon flaticon-person87"></span></button>
+                        }
+                    }
+                    else if (actionType.Name.ToLower().Contains("child") || actionType.Name.ToLower().Contains("дети"))
+                    {
+                        if (Model.ActionTypeId == 11 || Model.ActionTypeId == 12)
+                        {
+                            <button type="button" title="@actionType.Name" class="active"><span class="glyph-icon flaticon-kids1 active"></span></button>
+                        }
+                        else
+                        {
+                            <button type="button" title="@actionType.Name"><span class="glyph-icon flaticon-kids1"></span></button>
+                        }
+                    }
+                    else if (actionType.Name.ToLower().Contains("office") || actionType.Name.ToLower().Contains("офис"))
+                    {
+                        if (Model.ActionTypeId == 9 || Model.ActionTypeId == 10)
+                        {
+                            <button type="button" title="@actionType.Name" class="active"><span class="glyph-icon flaticon-man77 active"></span></button>
+                        }
+                        else
+                        {
+                            <button type="button" title="@actionType.Name"><span class="glyph-icon flaticon-man77"></span></button>
+                        }
+                    }
+                    else
+                    {
+                        if (Model.ActionTypeId == 1 || Model.ActionTypeId == 2)
+                        {
+                            <button type="button" title="@actionType.Name" class="active"><span class="glyph-icon flaticon-frontal7 active"></span></button>
+                        }
+                        else
+                        {
+                            <button type="button" title="@actionType.Name"><span class="glyph-icon flaticon-frontal7"></span></button>
+                        }
+                    }
+                }
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.SuggestionTermsTemperature)
+        <div id="divSuggestionTermsTemperature">
+            <div class="title">@GlobalResources.SuggestionTermsTemperature *</div>
+            <div class="btn-group inpCont">
+                @if ((Model.SuggestionTerms & 2) > 0)
+                {
+                    <button type="button" title="@GlobalResources.ACTIVE_HEAT" class="active"><span class="glyph-icon flaticon-heating3"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.ACTIVE_HEAT"><span class="glyph-icon flaticon-heating3"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 4) > 0)
+                {
+                    <button type="button" title="@GlobalResources.STATIC_HEAT" class="active"><span class="glyph-icon flaticon-gloves"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.STATIC_HEAT"><span class="glyph-icon flaticon-gloves"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 8) > 0)
+                {
+                    <button type="button" title="@GlobalResources.LIGHT_HEAT" class="active"><span class="glyph-icon flaticon-black276"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.LIGHT_HEAT"><span class="glyph-icon flaticon-black276"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 256) > 0)
+                {
+                    <button type="button" title="@GlobalResources.NO_PROTECTION" class="active"><span class="glyph-icon flaticon-short"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.NO_PROTECTION"><span class="glyph-icon flaticon-short"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 512) > 0)
+                {
+                    <button type="button" title="@GlobalResources.SWIMMING_TOOLS" class="active"><span class="glyph-icon flaticon-bikini5"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.SWIMMING_TOOLS"><span class="glyph-icon flaticon-bikini5"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 1024) > 0)
+                {
+                    <button type="button" title="@GlobalResources.STATIC_COOLING" class="active"><span class="glyph-icon flaticon-cool5"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.STATIC_COOLING"><span class="glyph-icon flaticon-cool5"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 2048) > 0)
+                {
+                    <button type="button" title="@GlobalResources.ACTIVE_COOLING" class="active"><span class="glyph-icon flaticon-electric10"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.ACTIVE_COOLING"><span class="glyph-icon flaticon-electric10"></span></button>
+                }
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.SuggestionTermsAdditional)
+        <div id="divSuggestionTermsAdditional">
+            <div class="title">@GlobalResources.SuggestionTermsAdditional *</div>
+            <div class="btn-group inpCont">
+                @if ((Model.SuggestionTerms & 16) > 0)
+                {
+                    <button type="button" title="@GlobalResources.EYE_PROTECTION" class="active"><span class="glyph-icon flaticon-skidiving"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.EYE_PROTECTION"><span class="glyph-icon flaticon-skidiving"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 32) > 0)
+                {
+                    <button type="button" title="@GlobalResources.FACE_PROTECTION" class="active"><span class="glyph-icon flaticon-person138"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.FACE_PROTECTION"><span class="glyph-icon flaticon-person138"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 64) > 0)
+                {
+                    <button type="button" title="@GlobalResources.SUN_PROTECTION" class="active"><span class="glyph-icon flaticon-black170"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.SUN_PROTECTION"><span class="glyph-icon flaticon-black170"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 128) > 0)
+                {
+                    <button type="button" title="@GlobalResources.WATER_PROTECTION" class="active"><span class="glyph-icon flaticon-black330"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.WATER_PROTECTION"><span class="glyph-icon flaticon-black330"></span></button>
+                }
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.SuggestionTermsExtra)
+        <div id="divSuggestionTermsExtra">
+            <div class="title">@GlobalResources.SuggestionTermsExtra *</div>
+            <div class="btn-group inpCont">
+                @if ((Model.SuggestionTerms & 4096) > 0)
+                {
+                    <button type="button" title="@GlobalResources.INSECTS_PROTECTION" class="active"><span class="glyph-icon flaticon-ant1"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.INSECTS_PROTECTION"><span class="glyph-icon flaticon-ant1"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 8192) > 0)
+                {
+                    <button type="button" title="@GlobalResources.ANIMALS_PROTECTION" class="active"><span class="glyph-icon flaticon-deer4"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.ANIMALS_PROTECTION"><span class="glyph-icon flaticon-deer4"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 16384) > 0)
+                {
+                    <button type="button" title="@GlobalResources.LIFE_PROTECTION" class="active"><span class="glyph-icon flaticon-home121"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.LIFE_PROTECTION"><span class="glyph-icon flaticon-home121"></span></button>
+                }
+                @if ((Model.SuggestionTerms & 32768) > 0)
+                {
+                    <button type="button" title="@GlobalResources.RADIATION_PROTECTION" class="active"><span class="glyph-icon flaticon-radiation2"></span></button>
+                }
+                else
+                {
+                    <button type="button" title="@GlobalResources.RADIATION_PROTECTION"><span class="glyph-icon flaticon-radiation2"></span></button>
+                }
+            </div>
+        </div>
+        <div id="divSeason">
+            <div class="title">@GlobalResources.Season </div>
+            @Html.HiddenFor(model => model.Season)
+            <div class="btn-group inpCont">
+                @if (Model.Season == 1)
+                {
+                    <button type="button" class="active"><span class="glyph-icon flaticon-sandals2"></span></button>
+                }
+                else
+                {
+                    <button type="button"><span class="glyph-icon flaticon-sandals2"></span></button>
+                }
+                @if (Model.Season == 2)
+                {
+                    <button type="button" class="active"><span class="glyph-icon flaticon-autumn1"></span></button>
+                }
+                else
+                {
+                    <button type="button"><span class="glyph-icon flaticon-autumn1"></span></button>
+                }
+                @if (Model.Season == 3)
+                {
+                    <button type="button" class="active"><span class="glyph-icon flaticon-christmas144"></span></button>
+                }
+                else
+                {
+                    <button type="button"><span class="glyph-icon flaticon-christmas144"></span></button>
+                }
+                @if (Model.Season == 4)
+                {
+                    <button type="button" class="active"><span class="glyph-icon flaticon-tree86"></span></button>
+                }
+                else
+                {
+                    <button type="button"><span class="glyph-icon flaticon-tree86"></span></button>
+                }
+            </div>
+        </div>
+
+        <div class="title">@GlobalResources.WaterProtectionPercent </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.WaterProtectionPercent)</div>
+
+        <div class="title">@GlobalResources.ArmoringPercent </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.ArmoringPercent)</div>
+
+        <div class="title">@GlobalResources.SunProtectionPercent </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.SunProtectionPercent)</div>
+
+        <div class="title">@GlobalResources.IceProtection </div>
+        <div class="inpCont">@Html.CheckBoxFor(model => model.IceProtection)</div>
+
+        <div class="title">@GlobalResources.MinAge </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.MinAge)</div>
+
+        <div class="title">@GlobalResources.MaxAge </div>
+        <div class="inpCont">@Html.TextBoxFor(model => model.MaxAge)</div>
+
+        <div class="title">@GlobalResources.YearLine </div>
+        <div class="inpCont">
+            @*@Html.TextBoxFor(model => model.Year)*@
+            @Html.DropDownList("Year", (SelectList)Model.Years)
+        </div>
+
+        <div class="title">@GlobalResources.IsPublic </div>
+        <div class="inpCont">@Html.CheckBoxFor(model => model.IsPublic)</div>
+
+        <div class="inpContclear">
+            <button name="button" type="submit">@GlobalResources.SaveChanges <span class="icon-arrow-next icon-white"></span></button>
+            @Html.ActionLink(GlobalResources.Cancel, "Cancel")
+        </div>
+
+    }
+</div>

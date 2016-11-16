@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="10adc649-2599-4a32-96b8-98a72e84d9c4" ChangeDateTime="03/03/2016 19:31:35">
+    <Property Name="ElementName" Value="[dbo].[Blog].[PubDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Blog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PublishDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c805bf4d-9ba9-455e-b4dc-a607b1b73a9b" ChangeDateTime="03/03/2016 19:37:06">
+    <Property Name="ElementName" Value="[dbo].[Blog].[Guid]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Blog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="32eefe0e-78ae-4f8b-a457-5eed59204a06" ChangeDateTime="03/03/2016 19:37:19">
+    <Property Name="ElementName" Value="[dbo].[Blog].[UID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Blog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UniqueId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="25130894-c163-4088-bca5-d39e24ff2f57" ChangeDateTime="03/03/2016 19:42:16">
+    <Property Name="ElementName" Value="[dbo].[Blog].[SourceLink]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Blog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SourceUrl" />
+  </Operation>
+</Operations>

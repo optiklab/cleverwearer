@@ -1,0 +1,995 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>About us</value>
+  </data>
+  <data name="AboutPage" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AssociateAccountFormat" xml:space="preserve">
+    <value>Registering via your {0} account.</value>
+  </data>
+  <data name="AssociationForm" xml:space="preserve">
+    <value>Association Form</value>
+  </data>
+  <data name="AvatarPicture" xml:space="preserve">
+    <value>Avatar picture</value>
+  </data>
+  <data name="GetNotifications" xml:space="preserve">
+    <value>Get notifications</value>
+  </data>
+  <data name="ShareYourChoice" xml:space="preserve">
+    <value>Share your choice</value>
+  </data>
+  <data name="BlogPage" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="ChangePasswordForm" xml:space="preserve">
+    <value>Change Password Form</value>
+  </data>
+  <data name="CheckEmailToConfirmRegistration" xml:space="preserve">
+    <value>Please check your email and confirm your email address.</value>
+  </data>
+  <data name="ClickToLogin" xml:space="preserve">
+    <value>click here to log in</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>The Earth&lt;br /&gt;
+The Solar System&lt;br /&gt;
+The Orion Arm&lt;br /&gt;
+The Milky Way&lt;br /&gt;
+The Virgo Supercluster&lt;br /&gt;
+The Universe</value>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Account confirmed</value>
+  </data>
+  <data name="ConfirmEmailFailed" xml:space="preserve">
+    <value>Confirm e-mail failed.</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="ConfirmRegistrationHeader" xml:space="preserve">
+    <value>Please confirm registration</value>
+  </data>
+  <data name="ConfirmYourAccount" xml:space="preserve">
+    <value>Confirm your registration</value>
+  </data>
+  <data name="ConfirmYourAccountContent" xml:space="preserve">
+    <value>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;html&gt;
+	&lt;head&gt;&lt;/head&gt;
+	&lt;body&gt;
+		&lt;table width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff;"&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td style="padding: 0px;"&gt;
+					&lt;table width="700" cellspacing="0" cellpadding="0" border="0" align="center" style="background-color: #eaeaea; table-layout: fixed;"&gt;
+						&lt;tbody&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+								&lt;table width="700" height="100" cellspacing="0" cellpadding="0" border="0"&gt;
+									&lt;tbody&gt;
+										&lt;tr&gt;
+											&lt;td style="width: 30px; height: 100px;"&gt;&lt;/td&gt;
+											&lt;td style="width: 120px; height: 100px;"&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/CleverWearerIcon_48px.png" width="48px" height="48px" /&gt;&lt;/td&gt;
+											&lt;td style="width: 380px; height: 100px;"&gt;&lt;/td&gt;
+											&lt;td style="width: 160px; height: 100px;"&gt;
+											&lt;/td&gt;
+											&lt;td style="width: 10px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;
+								&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td class="ecxcontent" style="background-color: #ffffff; padding: 0px;"&gt;
+								&lt;table class="ecxmain-content" width="700" cellspacing="0" cellpadding="0" border="0" align="center" style="border: 0px; background-color: #ffffff;"&gt;
+									&lt;tbody&gt;
+										&lt;tr&gt;
+											&lt;td style="height: 30px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td style="padding: 0px; width: 75px; font-size: 1px;"&gt; &lt;/td&gt;
+											&lt;td valign="top" style="padding: 0px;"&gt;
+											&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;Congratulations!&lt;/span&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;You have just created an account on Clever Wearer. Please use the following link to confirm your e-mail and complete registration:&lt;/span&gt;
+											&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;table class="ecxmedia_button" cellspacing="0" cellpadding="0" border="0" style="white-space: nowrap; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border: 1px solid #2288cc; text-align: center; height: 28px; background-color: #6982ef;"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td class="spacer" style="font-size: 1px; padding: 0px; width: 10px;"&gt; &lt;/td&gt;
+														&lt;td align="center" style="padding: 0px; height: 28px;"&gt;&lt;span style="text-shadow: #339bde 0px -1px 0px; white-space: nowrap; overflow: hidden; padding: 0px; font-family: 'helvetica neue', helvetica, arial, sans-serif; font-size: 13px; color: #ffffff;"&gt;
+														&lt;a style="border: none; color: #ffffff; text-decoration: none;" target="_blank" href="{0}"&gt;Confirm e-mail&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;
+														&lt;td class="spacer" style="font-size: 1px; padding: 0px; width: 10px;"&gt; &lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+											&lt;br /&gt;&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;
+											We help to &lt;b&gt;&lt;i&gt;get dressed for the weather&lt;/i&gt;&lt;/b&gt; and &lt;b&gt;&lt;i&gt;plan your wardrobe&lt;/i&gt;&lt;/b&gt; for the trip, and also we &lt;b&gt;&lt;i&gt;warn you about surprises from nature&lt;/i&gt;&lt;/b&gt;.&lt;br /&gt;
+											&lt;br /&gt;
+											1. To get clothing recommendations for the weather please fill your Location in Profile.&lt;br /&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/LocationEng.png" width="611px" height="324px" /&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											2. To plan a trip you can see the forecasts and recommendations for several cities at the same time for further week.&lt;br /&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/NotificationsEng.jpg" width="656px" height="246px" /&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											3. To be informed about any sudden climat change just select this option in Advanced Profile page.&lt;br /&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/ForecastEng.jpg" width="297px" height="113px" /&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;br /&gt;
+											Feel free to ask any questions and send your suggestions to us in the reply to this e-mail or address it to e-mail &lt;a href="mailto:{1}"&gt;{1}&lt;/a&gt;&lt;/span&gt;
+											&lt;td style="padding: 0px; width: 75px; font-size: 1px;"&gt; &lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td style="height: 30px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;
+								&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td style="padding: 0px;"&gt;
+								&lt;table width="700" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 0px;"&gt;
+									&lt;tbody&gt;
+										&lt;tr&gt;
+											&lt;td class="ecxfooter-padding-top" style="padding: 0px; height: 10px;" colspan="4"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;
+											&lt;span style="font-size: 13px; font-family: 'segoe ui', helvetica, arial, sans-serif; color: #888888;"&gt;Thank you,&lt;/span&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;span style="font-size: 13px; font-family: 'segoe ui', helvetica, arial, sans-serif; color: #888888;"&gt;Your Clever Wearer&lt;/span&gt;
+											&lt;br /&gt;
+											&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;{1}&lt;/span&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;/td&gt;
+											&lt;td style="width: 75px; padding: 0px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td style="padding: 0px; height: 15px;" colspan="3"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;
+								&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;
+					&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ConfirmYourAccountContentPlainText" xml:space="preserve">
+    <value>Congratulations! You just created an account on Clever Wearer. Please confirm your e-mail by going to a link: {0}. Feel free to ask any questions and send your suggestions to us in the reply to this e-mail or address it to e-mail {1}.</value>
+  </data>
+  <data name="ResetYourPasswordSubject" xml:space="preserve">
+    <value>Reset Clever Wearer password</value>
+  </data>
+  <data name="ResetYourPasswordContent" xml:space="preserve">
+    <value>Please reset your password by going to a &lt;a href='{0}'&gt;link&lt;/a&gt;</value>
+  </data>
+  <data name="ResetYourPasswordContentPlainText" xml:space="preserve">
+    <value>Please reset your password by going to a link: {0}</value>
+  </data>
+  <data name="ContactDescription" xml:space="preserve">
+    <value>Feel free to contact us in any way</value>
+  </data>
+  <data name="ContactPage" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="CreateLocalLogin" xml:space="preserve">
+    <value>Create Local Login</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="DontDeleteCity" xml:space="preserve">
+    <value>We need at least one city for the recommendations</value>
+  </data>
+  <data name="DoRegister" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="DoSignIn" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EnterForProviders" xml:space="preserve">
+    <value>If you already have a web site with your own clothing line or you present a store or chain stores then please fill in the profile and our managers will call you back soon. Your clothing line will appear in our recommendations soon.</value>
+  </data>
+  <data name="EnterYourEmail" xml:space="preserve">
+    <value>Enter your email.</value>
+  </data>
+  <data name="FeelsLike" xml:space="preserve">
+    <value>Feels like</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Fill in</value>
+  </data>
+  <data name="FillStoreProfile" xml:space="preserve">
+    <value>Fill your profile to get more accurate recommendations in your city.</value>
+  </data>
+  <data name="FillYourCloakroom" xml:space="preserve">
+    <value>Fill your virtual cloakroom to get recommendations from your clothe and share your choice with others</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="ForgotPasswordConfirmation" xml:space="preserve">
+    <value>Forgot Password Confirmation</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="HelloThere" xml:space="preserve">
+    <value>Hello there!</value>
+  </data>
+  <data name="HelloUserFormat" xml:space="preserve">
+    <value>Hello {0}!</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Humidity" xml:space="preserve">
+    <value>Humidity</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn more</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="LoginFailure" xml:space="preserve">
+    <value>Login Failure</value>
+  </data>
+  <data name="LoginPage" xml:space="preserve">
+    <value>Welcome on Clever Wearer!</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log off</value>
+  </data>
+  <data name="ManageAccount" xml:space="preserve">
+    <value>Manage your accounts</value>
+  </data>
+  <data name="ManageAccountPage" xml:space="preserve">
+    <value>Manage Account</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="Nickname" xml:space="preserve">
+    <value>Nickname</value>
+  </data>
+  <data name="OurGoals" xml:space="preserve">
+    <value>We aggregate the most interesting news about all wearable and smart devices from the IT world. With us you can find latest news and information 
+about smart clothes, wearable devices (like fitness or health trackers, etc.), smart jewely, internet of things, smart home applience and so on.
+
+Also we create a platform for selecting comfort parameters of your smart, or not smart yet, clothes and wearable electronics for any weather conditions.
+You may find us helpful for easy planning of your clothes for nearest trip to any location of the world.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PleaseTypeUniqueLocation" xml:space="preserve">
+    <value>Please, type in unique city name</value>
+  </data>
+  <data name="PleaseTypeYourLocation" xml:space="preserve">
+    <value>Please type your city</value>
+  </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>Pressure</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="ProfileCreated" xml:space="preserve">
+    <value>Profile сreated</value>
+  </data>
+  <data name="RecommendedProfileInfo" xml:space="preserve">
+    <value>The fields below are optional, but they will make your profile more beautiful</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisteredLogins" xml:space="preserve">
+    <value>Registered Logins</value>
+  </data>
+  <data name="RegisterNew" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="RegisterPage" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterShopFormat" xml:space="preserve">
+    <value>Fill your &lt;b&gt;{0}&lt;/b&gt; to see your brand items in recommendations.</value>
+  </data>
+  <data name="RememberBrowser" xml:space="preserve">
+    <value>Remember this browser?</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="ReminderHeader" xml:space="preserve">
+    <value>Lifehack!</value>
+  </data>
+  <data name="RequiredProfileInfo" xml:space="preserve">
+    <value>We recommend to fill these fields to improve recomendations for you</value>
+  </data>
+  <data name="ResetPasswordConfirmation" xml:space="preserve">
+    <value>Reset password confirmation</value>
+  </data>
+  <data name="ResetPasswordPage" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="ResetYourPassword" xml:space="preserve">
+    <value>Reset your password.</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Set password</value>
+  </data>
+  <data name="SmartWearerTeam" xml:space="preserve">
+    <value>Anton Yarkov aka OptikLab</value>
+  </data>
+  <data name="SuccessfullyAuthenticatedFormat" xml:space="preserve">
+    <value>You've successfully authenticated with {0}. Please enter your e-mail and click the Register button to finish logging in.</value>
+  </data>
+  <data name="SuggestionsError" xml:space="preserve">
+    <value>Something goes wrong...</value>
+  </data>
+  <data name="Sunrise" xml:space="preserve">
+    <value>Sunrise time</value>
+  </data>
+  <data name="Sunset" xml:space="preserve">
+    <value>Sunset time</value>
+  </data>
+  <data name="TellUs" xml:space="preserve">
+    <value>Your profile</value>
+  </data>
+  <data name="ThankYouForConfirm" xml:space="preserve">
+    <value>Thank you for confirming your account. Now you can &lt;a href="/UserProfile/Profile"&gt;fill your profile and cloakroom&lt;/a&gt; to get comfort clothes for any weather conditions!</value>
+  </data>
+  <data name="UnsuccessfulLogin" xml:space="preserve">
+    <value>Unsuccessful login with service.</value>
+  </data>
+  <data name="UploadButton" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="UseAnotherServiceToLogin" xml:space="preserve">
+    <value>Log in with social account</value>
+  </data>
+  <data name="GetNotificationsFull" xml:space="preserve">
+    <value>Get notifications to keep informed about serious weather changes.</value>
+  </data>
+  <data name="UseDragAndDrop" xml:space="preserve">
+    <value>or use Drag&amp;Drop to picture area</value>
+  </data>
+  <data name="UseLocalAccountToLogIn" xml:space="preserve">
+    <value>Log in or register with login and password.</value>
+  </data>
+  <data name="Visibility" xml:space="preserve">
+    <value>Visibility</value>
+  </data>
+  <data name="WarningHeader" xml:space="preserve">
+    <value>Oops...</value>
+  </data>
+  <data name="WhatDoWeKnow" xml:space="preserve">
+    <value>Here is what we know about you.</value>
+  </data>
+  <data name="WindE" xml:space="preserve">
+    <value>East wind (E)</value>
+  </data>
+  <data name="WindENE" xml:space="preserve">
+    <value>East wind (ENE)</value>
+  </data>
+  <data name="WindESE" xml:space="preserve">
+    <value>East wind (ESE)</value>
+  </data>
+  <data name="WindN" xml:space="preserve">
+    <value>North wind (N)</value>
+  </data>
+  <data name="WindNE" xml:space="preserve">
+    <value>North-East wind (NE)</value>
+  </data>
+  <data name="WindNNE" xml:space="preserve">
+    <value>North wind (NNE)</value>
+  </data>
+  <data name="WindNNW" xml:space="preserve">
+    <value>North wind (NNW)</value>
+  </data>
+  <data name="WindNW" xml:space="preserve">
+    <value>North-West wind (NW)</value>
+  </data>
+  <data name="WindS" xml:space="preserve">
+    <value>South wind (S)</value>
+  </data>
+  <data name="WindSE" xml:space="preserve">
+    <value>South-East wind (SE)</value>
+  </data>
+  <data name="WindSpeed" xml:space="preserve">
+    <value>Wind speed</value>
+  </data>
+  <data name="WindSSE" xml:space="preserve">
+    <value>South wind (SSE)</value>
+  </data>
+  <data name="WindSSW" xml:space="preserve">
+    <value>South wind (SSW)</value>
+  </data>
+  <data name="WindSW" xml:space="preserve">
+    <value>South-West wind (SW)</value>
+  </data>
+  <data name="WindW" xml:space="preserve">
+    <value>West wind (W)</value>
+  </data>
+  <data name="WindWNW" xml:space="preserve">
+    <value>West wind (WNW)</value>
+  </data>
+  <data name="WindWSW" xml:space="preserve">
+    <value>West wind (WSW)</value>
+  </data>
+  <data name="YouDontHaveAccount" xml:space="preserve">
+    <value>You do not have a local username/password for our site. Add a password so you can log in without an external login.</value>
+  </data>
+  <data name="YouLoggedInAs" xml:space="preserve">
+    <value>You're logged in as</value>
+  </data>
+  <data name="YourPasswordReset" xml:space="preserve">
+    <value>Your password has been reset. Please</value>
+  </data>
+  <data name="СheckEmailToResetPassword" xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="DressingRoom" xml:space="preserve">
+    <value>Dressing room</value>
+  </data>
+  <data name="JSError" xml:space="preserve">
+    <value>Oops, something wrong!</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please, wait a bit!</value>
+  </data>
+  <data name="EmailLenghtLimit" xml:space="preserve">
+    <value>Email lenght limited to 100.</value>
+  </data>
+  <data name="FirstNameLenghtLimit" xml:space="preserve">
+    <value>FirstName lenght limited to 50.</value>
+  </data>
+  <data name="LastNameLenghtLimit" xml:space="preserve">
+    <value>LastName lenght limited to 50.</value>
+  </data>
+  <data name="UrlLenghtLimit" xml:space="preserve">
+    <value>Url lenght limited to 255.</value>
+  </data>
+  <data name="UserNameLenghtLimit" xml:space="preserve">
+    <value>UserName lenght limited to 50.</value>
+  </data>
+  <data name="UserNameRequired" xml:space="preserve">
+    <value>UserName required.</value>
+  </data>
+  <data name="CurrentLang" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="LocationLenghtLimit" xml:space="preserve">
+    <value>Location lenght limited to 100.</value>
+  </data>
+  <data name="SelectedLocationLenghtLimit" xml:space="preserve">
+    <value>Selected Location lenght limited to 100.</value>
+  </data>
+  <data name="PasswordCompare" xml:space="preserve">
+    <value>The new password and confirmation password do not match.</value>
+  </data>
+  <data name="PasswordLenghtLimit" xml:space="preserve">
+    <value>The Password must be at least 6 characters long.</value>
+  </data>
+  <data name="SeeResult" xml:space="preserve">
+    <value>So, look what we have here for you:</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>Additional Info</value>
+  </data>
+  <data name="AdditionalInfoLenghtLimit" xml:space="preserve">
+    <value>Additional Info lenght limited to 2000.</value>
+  </data>
+  <data name="AdvancedProfileSettings" xml:space="preserve">
+    <value>Save and go to Advanced profile settings</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CompanyCEO" xml:space="preserve">
+    <value>Company CEO</value>
+  </data>
+  <data name="CompanyCEOLenghtLimit" xml:space="preserve">
+    <value>Company CEO lenght limited to 255.</value>
+  </data>
+  <data name="CompanyEmail" xml:space="preserve">
+    <value>Company Email</value>
+  </data>
+  <data name="CompanyEmailLenghtLimit" xml:space="preserve">
+    <value>Company Email lenght limited to 255.</value>
+  </data>
+  <data name="CompanyFax" xml:space="preserve">
+    <value>Company Fax</value>
+  </data>
+  <data name="CompanyFaxLenghtLimit" xml:space="preserve">
+    <value>Company Fax lenght limited to 50.</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="CompanyNameLenghtLimit" xml:space="preserve">
+    <value>Company Name lenght limited to 255.</value>
+  </data>
+  <data name="CompanyPhone" xml:space="preserve">
+    <value>Company Phone</value>
+  </data>
+  <data name="CompanyPhoneLenghtLimit" xml:space="preserve">
+    <value>Company Phone lenght limited to 50.</value>
+  </data>
+  <data name="FillCompanyInfo" xml:space="preserve">
+    <value>If you represent a company and wish to share your Brand Dress then please fill the detailed information</value>
+  </data>
+  <data name="ItemProviders" xml:space="preserve">
+    <value>Information about selling points or branches</value>
+  </data>
+  <data name="ItemProvidersDescription" xml:space="preserve">
+    <value>We need this information to show your selling point in our recommendations in the selected location.</value>
+  </data>
+  <data name="MainCompanyUrl" xml:space="preserve">
+    <value>Main Company Url</value>
+  </data>
+  <data name="MainCompanyUrlLenghtLimit" xml:space="preserve">
+    <value>Main Company Url lenght limited to 255.</value>
+  </data>
+  <data name="ManageWeatherEventSubscriptions" xml:space="preserve">
+    <value>Manage subscriptions for weather event notifications</value>
+  </data>
+  <data name="NotificationsOnly" xml:space="preserve">
+    <value>We appreciate your time, so you subscribe only to real weather events, not news or any spam letters.</value>
+  </data>
+  <data name="NotifyMeAboutWeatherEvents" xml:space="preserve">
+    <value>I want to get notifications about sudden weather events.</value>
+  </data>
+  <data name="SellCompanyUrl" xml:space="preserve">
+    <value>Sell Company Url</value>
+  </data>
+  <data name="SellCompanyUrlLenghtLimit" xml:space="preserve">
+    <value>Sell Company Url lenght limited to 255.</value>
+  </data>
+  <data name="DressRoom" xml:space="preserve">
+    <value>Dress room</value>
+  </data>
+  <data name="ManageDressRoom" xml:space="preserve">
+    <value>Manage dress room</value>
+  </data>
+  <data name="SpecialNotes" xml:space="preserve">
+    <value>We selected clothe for you based on this recommendation:</value>
+  </data>
+  <data name="ItemDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ItemDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ItemDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ItemImage" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="ItemAdd" xml:space="preserve">
+    <value>Add new</value>
+  </data>
+  <data name="ItemEdit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="ItemLocalDescription" xml:space="preserve">
+    <value>Description (native)</value>
+  </data>
+  <data name="ItemLocalName" xml:space="preserve">
+    <value>Name (native)</value>
+  </data>
+  <data name="ItemName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="MadeBy" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="ProvideBy" xml:space="preserve">
+    <value>Shop</value>
+  </data>
+  <data name="ArmoringPercent" xml:space="preserve">
+    <value>Armor (%)</value>
+  </data>
+  <data name="IceProtection" xml:space="preserve">
+    <value>Iceproof</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="MaxAge" xml:space="preserve">
+    <value>Max age</value>
+  </data>
+  <data name="MinAge" xml:space="preserve">
+    <value>Min age</value>
+  </data>
+  <data name="Season" xml:space="preserve">
+    <value>Select season</value>
+  </data>
+  <data name="SuggestionTermsTemperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="SunProtectionPercent" xml:space="preserve">
+    <value>Sunproof (%)</value>
+  </data>
+  <data name="WaterProtectionPercent" xml:space="preserve">
+    <value>Waterproof (%)</value>
+  </data>
+  <data name="YearLine" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="ACTIVE_COOLING" xml:space="preserve">
+    <value>Very light cloth with active cooling components</value>
+  </data>
+  <data name="ACTIVE_HEAT" xml:space="preserve">
+    <value>Extra warm cloth with active heating components</value>
+  </data>
+  <data name="ANIMALS_PROTECTION" xml:space="preserve">
+    <value>Animals protection</value>
+  </data>
+  <data name="EYE_PROTECTION" xml:space="preserve">
+    <value>Eye protection</value>
+  </data>
+  <data name="FACE_PROTECTION" xml:space="preserve">
+    <value>Face protection</value>
+  </data>
+  <data name="INSECTS_PROTECTION" xml:space="preserve">
+    <value>Insects protection</value>
+  </data>
+  <data name="LIFE_PROTECTION" xml:space="preserve">
+    <value>Life  protection</value>
+  </data>
+  <data name="LIGHT_HEAT" xml:space="preserve">
+    <value>Light warm cloth</value>
+  </data>
+  <data name="NO_PROTECTION" xml:space="preserve">
+    <value>Very light cloth for ideal conditions</value>
+  </data>
+  <data name="RADIATION_PROTECTION" xml:space="preserve">
+    <value>Radiation protection</value>
+  </data>
+  <data name="STATIC_COOLING" xml:space="preserve">
+    <value>Light summer cloth</value>
+  </data>
+  <data name="STATIC_HEAT" xml:space="preserve">
+    <value>Winter warm cloth</value>
+  </data>
+  <data name="SuggestionTermsAdditional" xml:space="preserve">
+    <value>Additional</value>
+  </data>
+  <data name="SuggestionTermsExtra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="SUN_PROTECTION" xml:space="preserve">
+    <value>Sun protection</value>
+  </data>
+  <data name="SWIMMING_TOOLS" xml:space="preserve">
+    <value>Swimming tool</value>
+  </data>
+  <data name="WATER_PROTECTION" xml:space="preserve">
+    <value>Waterproof or water protection</value>
+  </data>
+  <data name="SuggestionFactors" xml:space="preserve">
+    <value>Please describe your cloth by selecting appropriate categories (required categories marked *)</value>
+  </data>
+  <data name="ActionType" xml:space="preserve">
+    <value>Best reason to wear (action type)</value>
+  </data>
+  <data name="IsPublic" xml:space="preserve">
+    <value>Other users may see your cloth in their recommendations?</value>
+  </data>
+  <data name="WhatWearIn2Weeks" xml:space="preserve">
+    <value>What to wear in 2 weeks</value>
+  </data>
+  <data name="WhatWearToday" xml:space="preserve">
+    <value>Daily forecast</value>
+  </data>
+  <data name="WhatWearTomorrow" xml:space="preserve">
+    <value>What to wear tomorrow</value>
+  </data>
+  <data name="PlanTheTrip" xml:space="preserve">
+    <value>Take a look what to wear in any city around the world</value>
+  </data>
+  <data name="WishList" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="Ages" xml:space="preserve">
+    <value>Ages</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="ItIsNotPublic" xml:space="preserve">
+    <value>Dress is NOT visibile in public</value>
+  </data>
+  <data name="ItIsPublic" xml:space="preserve">
+    <value>Dress is visibile in public recommendations</value>
+  </data>
+  <data name="ModelBy" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="SunProtection" xml:space="preserve">
+    <value>Sun protection</value>
+  </data>
+  <data name="WaterProtection" xml:space="preserve">
+    <value>Water protection</value>
+  </data>
+  <data name="YearLabel" xml:space="preserve">
+    <value>year</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Seasons" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="AddDress" xml:space="preserve">
+    <value>Add dress item</value>
+  </data>
+  <data name="EditDress" xml:space="preserve">
+    <value>Edit dress item</value>
+  </data>
+  <data name="InDevelopment" xml:space="preserve">
+    <value>In development</value>
+  </data>
+  <data name="CleverWearerDescription" xml:space="preserve">
+    <value>We help to &lt;i&gt;get dressed for the weather&lt;/i&gt; and &lt;i&gt;plan your wardrobe&lt;/i&gt; for the trip, and also we &lt;i&gt;warn you about surprises from nature&lt;/i&gt;.</value>
+  </data>
+  <data name="ForFree" xml:space="preserve">
+    <value>FOR FREE</value>
+  </data>
+  <data name="CleverWearerEnterHeader" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="CleverWearerFunctions" xml:space="preserve">
+    <value>- Recommend kind of clothes from your wardrobe to dress right now &lt;br&gt;
+- Show where you can buy clothes in your city &lt;br&gt;
+- Notify you by E-mail about the sudden weather changes &lt;br&gt;
+- Recommend what to bring on a trip to any place on Earth</value>
+  </data>
+  <data name="CleverWearerFunctionsHeader" xml:space="preserve">
+    <value>What do we have for you?</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>- OR -</value>
+  </data>
+  <data name="Fri" xml:space="preserve">
+    <value>Fri</value>
+  </data>
+  <data name="Mon" xml:space="preserve">
+    <value>Mon</value>
+  </data>
+  <data name="Sat" xml:space="preserve">
+    <value>Sat</value>
+  </data>
+  <data name="Sun" xml:space="preserve">
+    <value>Sun</value>
+  </data>
+  <data name="Thu" xml:space="preserve">
+    <value>Thu</value>
+  </data>
+  <data name="Tue" xml:space="preserve">
+    <value>Tue</value>
+  </data>
+  <data name="Wed" xml:space="preserve">
+    <value>Wed</value>
+  </data>
+  <data name="CleverWearerFutureFunctionsHeader" xml:space="preserve">
+    <value>What we plan to have for you?</value>
+  </data>
+  <data name="CleverWearerMoney" xml:space="preserve">
+    <value>Money?</value>
+  </data>
+  <data name="AssociateSocialAccount" xml:space="preserve">
+    <value>Registering via external authentication service</value>
+  </data>
+  <data name="NoItems" xml:space="preserve">
+    <value>Unfortunately there are no clothing for your request. Try to change query filter.</value>
+  </data>
+  <data name="NoMoreCities" xml:space="preserve">
+    <value>If you really need more cities in this list, please let us know: cleverwearer@gmail.com</value>
+  </data>
+  <data name="Calculations" xml:space="preserve">
+    <value>We are searching for appropriate clothing...</value>
+  </data>
+  <data name="CreateLook" xml:space="preserve">
+    <value>Create look</value>
+  </data>
+  <data name="EditWardrobe" xml:space="preserve">
+    <value>Edit wardrobe</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="SendNewPassword" xml:space="preserve">
+    <value>Send me new password</value>
+  </data>
+  <data name="RefreshToken" xml:space="preserve">
+    <value>Token is not sufficient or is not fresh.</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>If you liked our service you may help us to improve our service by donating any amount of money to </value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>PayPal</value>
+  </data>
+  <data name="SmartClothesFeed" xml:space="preserve">
+    <value>Smart clothes news</value>
+  </data>
+  <data name="SmartDevicesFeed" xml:space="preserve">
+    <value>Wearable devices news</value>
+  </data>
+  <data name="SmartStartupsFeed" xml:space="preserve">
+    <value>New industry startups</value>
+  </data>
+  <data name="ToFullFeed" xml:space="preserve">
+    <value>Read more...</value>
+  </data>
+  <data name="MoreButton" xml:space="preserve">
+    <value>Show another clothes set...</value>
+  </data>
+  <data name="VisitVendorButton" xml:space="preserve">
+    <value>Visit full collection on vendor</value>
+  </data>
+</root>

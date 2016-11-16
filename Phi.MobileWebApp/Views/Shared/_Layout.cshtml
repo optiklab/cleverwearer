@@ -1,0 +1,115 @@
+﻿@using Phi.MobileWebApp.Resources
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title - Clever Wearer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="погода, одежда, рекомендации, clothing, dress, clothes, cloth, recommend" />
+    <meta property="og:title" content="cleverwearer.com" />
+    @if (GlobalResources.CurrentLang == "ru")
+    {
+        <meta property="og:description" content="Мы рекомендуем комфортную одежду под погодные условия." />
+    }
+    else
+    {
+        <meta property="og:description" content="We recommend comfortable clothing for weather conditions." />
+    }
+    <meta property="og:url" content="http://cleverwearer.com" />
+    <meta property="og:image" content="http://cleverwearer.com/img/logo.png" />
+
+    <meta name="title" content="cleverwearer.com" />
+    @if (GlobalResources.CurrentLang == "ru")
+    {
+        <meta name="description" content="Мы рекомендуем комфортную одежду под погодные условия." />
+    }
+    else
+    {
+        <meta name="description" content="We recommend comfortable clothing for weather conditions." />
+    }
+    <link rel="image_src" href="http://cleverwearer.com/img/logo.png" />
+    <link rel="shortcut icon" href="@Url.Content("~/Content/images/favicon.ico")" type="image/x-icon" />
+
+    <!--[if lt IE 9]>
+    <script src="html5shiv.js"></script>
+    <![endif]-->
+
+    @Styles.Render("~/Content/css")
+
+    @*<link href="~/Content/styles.css?v=2" rel="stylesheet">
+    <link href="~/Content/fontface.css" rel="stylesheet">*@
+
+    <!-- Scripts -->
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/Scripts/spin.min.js?v=1"></script>
+
+    @RenderSection("Scripts", required: false)
+
+    <!-- Google Analytics -->    
+	<!-- TODO -->
+    <!-- /Google Analytics -->
+
+	<!-- Yandex.Metrika counter -->    
+	<!-- TODO -->    
+	<!-- /Yandex.Metrika counter -->
+
+    <!-- VK Like button-->
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
+</head>
+<body>
+    <div class="pageWrapper">
+        <!-- FB Like button-->
+                <!-- TODO -->
+        <!-- /FB Like button-->
+        <header>
+            @Html.Hidden("CurrentLang", GlobalResources.CurrentLang)
+            <nav class="clear">
+                <ul>
+                    <li>@Html.ActionLink(GlobalResources.HomePage, "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink(GlobalResources.AboutPage, "About", "Home", new { area = "" }, null)</li>
+                    <li class="splitter">|</li>
+                    <li>@Html.Partial("_LoginPartial")</li>
+                    <li class="splitter">|</li>
+                    <li>@Html.Partial("_LangPartial")</li>
+                </ul>
+            </nav>
+            @*<div class="logoutForm">
+                @Html.Partial("_LoginPartial")
+            </div>*@
+            <h1>
+                <img src="~/img/logo.png" alt="cleverwearer.com" class="logo" />
+                @Html.ActionLink("Clever Wearer", "Index", "Home", new { area = "" }, new { @class = "" })
+            </h1>
+        </header>
+        <div class="contentWrapper">
+            @RenderBody()
+            @RenderSection("SPAViews", required: false)
+         </div>
+        <footer>
+            <address>
+                &copy; @DateTime.Now.Year - <a href="mailto:cleverwearer@gmail.com">@GlobalResources.SmartWearerTeam</a>
+                <!-- This image here is just for Facebook Share button. -->
+                <a href="http://cleverwearer.com" target="_blank" style="display:none;"><img src="~/img/logo.png" class="externalauth" /></a>
+                <a href="http://vk.com/cleverwearer" target="_blank" class="externalauth"><img src="~/img/vkontakte.png" class="externalauth" /></a>
+                <a href="http://www.facebook.com/cleverwearer" target="_blank" class="externalauth"><img src="~/img/facebook32.png" class="externalauth" /></a>
+                <a href="https://twitter.com/cleverwearer" target="_blank" class="externalauth"><img src="~/img/twitter42.png" class="externalauth" /></a>
+                <a href="https://instagram.com/cleverwearer" target="_blank" class="externalauth"><img src="~/img/instagram.jpg" class="externalauth" /></a>
+            </address>
+            <div class="social">
+                <!-- TODO -->
+                <!-- Twitter Like -->
+                <!-- Faebook Like -->
+                <!-- VK Like -->
+            </div>
+            <div class="advertisement">
+                <!-- TODO -->
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

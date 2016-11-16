@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Phi.MainDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{a7f29672-b79d-4dc4-89dd-5899ca3d17e2}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Phi.MainDatabase</RootNamespace>
+    <AssemblyName>Phi.MainDatabase</AssemblyName>
+    <ModelCollation>1049,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Cyrillic_General_CI_AS</DefaultCollation>
+    <GenerateCreateScript>True</GenerateCreateScript>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Import Script Logs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ActionType.sql" />
+    <Build Include="dbo\Tables\Alerts.sql" />
+    <Build Include="dbo\Tables\Blog.sql" />
+    <Build Include="dbo\Tables\BlogComments.sql" />
+    <Build Include="dbo\Tables\BlogStars.sql" />
+    <Build Include="dbo\Tables\ClimatType.sql" />
+    <Build Include="dbo\Tables\ConditionDescription.sql" />
+    <Build Include="dbo\Tables\DataProvider.sql" />
+    <Build Include="dbo\Tables\EmailAccount.sql" />
+    <Build Include="dbo\Tables\Factor.sql" />
+    <Build Include="dbo\Tables\FactorType.sql" />
+    <Build Include="dbo\Tables\GoodThoughts.sql" />
+    <Build Include="dbo\Tables\Images.sql" />
+    <Build Include="dbo\Tables\Item.sql" />
+    <Build Include="dbo\Tables\ItemLikes.sql" />
+    <Build Include="dbo\Tables\ItemParameters.sql" />
+    <Build Include="dbo\Tables\ItemProviders.sql" />
+    <Build Include="dbo\Tables\ItemsViaParameters.sql" />
+    <Build Include="dbo\Tables\ItemType.sql" />
+    <Build Include="dbo\Tables\Language.sql" />
+    <Build Include="dbo\Tables\Location.sql" />
+    <Build Include="dbo\Tables\MessageTemplate.sql" />
+    <Build Include="dbo\Tables\PhiUsers.sql" />
+    <Build Include="dbo\Tables\ProvidersItems.sql" />
+    <Build Include="dbo\Tables\QueuedEmail.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\Rules.sql" />
+    <Build Include="dbo\Tables\SeasonType.sql" />
+    <Build Include="dbo\Tables\SeasonViaLocation.sql" />
+    <Build Include="dbo\Tables\Setting.sql" />
+    <Build Include="dbo\Tables\SuggestionItems.sql" />
+    <Build Include="dbo\Tables\Suggestions.sql" />
+    <Build Include="dbo\Tables\SuggestionTerm.sql" />
+    <Build Include="dbo\Tables\Units.sql" />
+    <Build Include="dbo\Tables\UserAttribute.sql" />
+    <Build Include="dbo\Tables\UserClaims.sql" />
+    <Build Include="dbo\Tables\UserLogins.sql" />
+    <Build Include="dbo\Tables\UserProfile.sql" />
+    <Build Include="dbo\Tables\UserProfilesViaItemProviders.sql" />
+    <Build Include="dbo\Tables\UserRoles.sql" />
+    <Build Include="dbo\Tables\UserStat.sql" />
+    <Build Include="dbo\Tables\WeatherConditions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Import Script Logs\1 - Create_tables_sq_20150308110005.log" />
+    <None Include="Phi.MainDatabase.sqlproj.user" />
+    <None Include="Phi.MainDatabase.dbmdl" />
+    <None Include="Phi.MainDatabase.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Phi.MainDatabase.refactorlog" />
+  </ItemGroup>
+</Project>

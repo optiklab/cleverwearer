@@ -1,0 +1,735 @@
+﻿@using Phi.MobileWebApp.Resources
+@{
+    ViewBag.Title = @GlobalResources.BlogPage;
+}
+        <h2 class="headerBlog">@GlobalResources.BlogPage</h2>
+        @if (GlobalResources.CurrentLang == "en")
+        {
+            @*<div class="col-md-3 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav">
+                    <li><a href="#whatisallabout"><i class="icon-chevron-right"></i>What is all about</a></li>
+                    <li><a href="#basic"><i class="icon-chevron-right"></i>Basic wardrobe</a></li>
+                </ul>
+            </div>*@
+            <div class="blogContainer">
+                <section id="whatisallabout">
+                    <div class="pageHeader">
+                        <h3>What is all about?</h3>
+                        <p class="date">December 1, 2014</p>
+                        <p>
+                            There are many services that supply weather data to varying degrees of accuracy. I believe that people who are closely watching their health,
+                            may know how a specific temperature affects their body: you are cold, warm or comfortable. I personally do not have the strength to be stored
+                            in memory such information. In addition to temperature, the feeling of comfort is strongly influenced by other data, such as humidity, pressure and wind.
+                            Of course, it is very important what kind of clothes you wear at the same time.
+                        </p>
+                        <p>
+                            Europeans tend to at least once a year to change their wardrobe, so I can not imagine how people can dress comfortably, but to check it empirically:
+                            dressed, went outside and checked. And what would happen if you put a child who can not tell whether he comfortable? And what if you can not go out,
+                            because I'm going on a business trip or a vacation in another city?
+                        </p>
+                        <p>
+                            These and other questions arose in my mind time to time, and I decided to try to solve at least some of them. This site has been built <span class="fontBold">to try</span> to be
+                            helpful and suggest what clothes from your wardrobe need to dress to be comfortable. And, of course, where you can buy clothes, if you have not.
+                        </p>
+                        <p>
+                            I am a programmer, so I have more technical solutions and ideas than time to implement them. But I will try to actively develop this website, because
+                            I think and hope my idea is at least useful.
+                        </p>
+                        <p>In the future, I am going to implement the following functionality (tick noted that realized at the time, when you read this):</p>
+                        <p>✓ Display of clothes in your wardrobe recommendations under the weather</p>
+                        <p>✓ Display links to the stores where you can buy clothes</p>
+                        <p>✓ Showing clothing recommendations based on weather forecasts</p>
+                        <p>- E-mail notification when sudden weather changes that you looked at our recommendations for clothes</p>
+                        <p>- Showing recommendations clothes on events of global significance</p>
+                        <p>- Share with others what you dress today or this season to allow others to adjust their choice according to the weather, fashion, etc.</p>
+                        <p>- IDEALLY would like to develop the theme with a line of clothing with sensors to determine the comfort and gather statistics by region</p>
+                        <p>Looking forward to any suggestions and comments on the work of the service, which you can send to e-mail: <a href="mailto:cleverwearer@gmail.com">cleverwearer@gmail.com</a></p>
+                        <p>P.S. And please, do not be much stricter, because I'm doing it with my own money in my own free time.</p>
+                    </div>
+                </section>
+                <section id="basic">
+                    <div class="pageHeader">
+                        <h3>Basic wardrobe</h3>
+                        <p class="date">December 2, 2014</p>
+                        <p>
+                            Basic wardrobe is a list of absolute wardrobe essentials so you always have something good to wear in any combinations. Read <a href="http://www.realsimple.com/beauty-fashion/clothing/wardrobe-basics/wardrobe-basics-checklist">more about it</a>.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        }
+        else
+        {
+            @*<div class="col-md-3 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav">
+                    <li><a href="#whatisallabout"><i class="icon-chevron-right"></i>О чём этот проект и для чего?</a></li>
+                    <li><a href="#basic"><i class="icon-chevron-right"></i>Базовый гардероб</a></li>
+                    <li><a href="#howtobedressweather"><i class="icon-chevron-right"></i>Как одеваться по погоде</a></li>
+                    <li><a href="#getdresschild"><i class="icon-chevron-right"></i>Как одевать ребенка весной (от рождения до года)</a></li>
+                </ul>
+            </div>*@
+    <div class="blogContainer">
+        <section id="whatisallabout">
+            <div class="pageHeader">
+                <h3>О чём этот проект и для чего?</h3>
+                <p class="date">1 декабря, 2014</p>
+                <p>
+                    Существует множество сервисов, поставляющих погодные данные разной степени точности. Полагаю, что люди, которые внимательно следят за
+                    состоянием своего здоровья, могут знать как конкретное значение температуры влияет на их организм: вам холодно, жарко или комфортно. Лично мне
+                    не хватает сил хранить в памяти подобную информацию. Помимо температуры, на ощущение комфортности при определенной погоде сильно влияют и другие данные,
+                    например, влажность, ветер и давление. Конечно же, очень важно какую одежду вы при этом носите.
+                </p>
+                <p>
+                    Европейцам свойственно хотя бы раз в год менять свой гардероб, поэтому я не представляю как человек может одеться комфортно, кроме как проверив это опытным
+                    путём: оделся, вышел на улицу, проверил. А что же будет, если вы одеваете ребенка, который не может сказать комфортно ли ему? А что будет, если вы не можете
+                    выйти на улицу, потому что собираетесь в командировку или отпуск в другой город?
+                </p>
+                <p>
+                    Эти и другие вопросы возникали в моей голове периодически, и я решил попробовать решить хотя бы часть из них. Данный сайт построен чтобы <span class="fontBold">попытаться</span>
+                    быть полезным и подсказывать какую одежду из вашего гардероба нужно одеть, чтобы было комфортно. Ну и, конечное же, где можно купить одежду, если у вас её нет.
+                </p>
+                <p>
+                    Я программист, а потому технических решений и идей у меня больше, чем времени на их реализацию. Но я постараюсь активно развивать данный веб-сайт, так как
+                    считаю эту идею хоть сколько нибудь полезной.
+                </p>
+                <p>В дальнейшем я собираюсь реализовать следующий функционал (галочкой отмечено то, что реализовано на момент, когда вы читаете этот текст):</p>
+                <p>✓ Показ одежды вашего гардероба в рекомендациях под погоду</p>
+                <p>✓ Показ и ссылки на магазины, в которых вы можете приобрести одежду</p>
+                <p>✓ Показ рекомендаций одежды на основе погодных данных</p>
+                <p>- E-mail нотификации при резких изменениях погоды, чтобы вы посмотрели наши рекомендации по одежде</p>
+                <p>- Показ рекомендаций одежды на события мирового значения</p>
+                <p>- Делиться с другими, что ты сегодня или в этом сезоне выбрал для себя, чтобы остальные могли корректировать свой выбор согласно погоде, моде и т.д.</p>
+                <p>- ИДЕАЛЬНО было бы развить тему с линией одежды с датчиками для определения комфортности и сбора статистики по регионам</p>
+                <p>Буду рад любым предложениям и замечаниям по работе сервиса, которые вы можете направлять на e-mail: <a href="mailto:cleverwearer@gmail.com">cleverwearer@gmail.com</a></p>
+                <p>P.S. И пожалуйста, не будьте сильно строги, ведь я делаю это за свои деньги в своё свободное время.</p>
+            </div>
+        </section>
+        <section id="basic">
+            <div class="pageHeader">
+                <h3>Базовый гардероб</h3>
+                <p class="date">2 декабря, 2014</p>
+                <p>
+                    Базовый гардероб - это список вещей, которые каждый человек должен иметь, и эта одежда в различных комбинациях позволит вам комфортно одеться в любую погоду и под
+                    любое событие. Читать больше о <a href="http://www.ideal-garderob.ru/ideas/100_vewej_idealnogo_garderoba/">100 вещах идеального гардероба</a> и в общем об <a href="http://medny.ru/style/zhensky-stil/">идеальном гардеробе</a>.
+                </p>
+            </div>
+        </section>
+        <section id="howtobedressweather">
+            <div class="pageHeader">
+                <h3><a href="http://www.kakprosto.ru/kak-129757-kak-odevatsya-po-pogode">Как одеваться по погоде</a></h3>
+                <p class="date">10 декабря, 2014</p>
+                <p>
+                    <i>Перепост с сайта <a href="http://www.kakprosto.ru/">http://www.kakprosto.ru</a></i>
+                    <br>
+                    Трудно найти человека, которому бы не хотелось всегда хорошо выглядеть и при этом чувствовать себя максимально комфортно. Для этого стоит научиться одеваться по погоде, следуя ее капризам независимо от сезона.
+                <p>Инструкция:</p>
+                <p>1. Обращайте внимание на температуру комфорта. Этот показатель присутствует наряду с прогнозируемыми температурами в сообщениях синоптиков. Он поможет вам сориентироваться и одеться по погоде. Например, при дневной температуре +15°C, сильном порывистом северном ветре и влажности в 70% температура комфорта составит не выше +10-12°C. Таким образом, следует одеваться теплее, надевая шарф или платок, легкий берет или кепку.</p>
+                <p>2. Позаботьтесь об обуви. Выбирайте такие модели, которые обеспечат вам сухость и тепло независимо от времени года. Используйте защитные и утепленные стельки, приобретите полиуретановые сапоги или ботинки, без которых сложно обойтись в межсезонье в сырую и дождливую погоду. Обязательно следите за тем, чтобы ваши ноги не промокали и не переохлаждались, т.к. это чревато болезнями почек, репродуктивных органов, общим ослаблением иммунной системы организма.</p>
+                <p>3. Находясь на улице, защищайтесь от ветра, т.к. он легко сдувает с кожи защитную прослойку из теплого воздуха. Надевайте теплую верхнюю одежду. В неустойчивую межсезонную погоду до +15°C лучше не рисковать здоровьем и не спешить щеголять в легких плащах и куртках. Надевая демисезонное пальто или утепленный плащ, достаточно сменить зимний шарф на платок или палантин, а теплый шерстяной свитер – на более тонкий, полушерстяной. Можно надеть хлопковую или льняную тунику или пуловер.</p>
+                <p>4. Обратите внимание на головные уборы. Конечно, люди по-разному воспринимают изменение температур. Но этому предмету гардероба следует уделить особое внимание. Помимо красоты волос, важно отметить защищенность ушей и кожи головы. Зимой не забывайте носить теплую шапку, капюшон и т.д. При низких температурах очень легко простудить уши, подвергнуться инфекционным заболеваниям, что потом может потребовать долгого и, кстати, не всегда успешного лечения. Осенью и весной можно поэкспериментировать. Если температура комфорта не поднимается выше +5-10°C, примерьте, например, кожаную кепку, берет или классическую хлопковую шапку с отворотом.</p>
+                <p>5. Обратите внимание на пончо и накидки. Изобилие материалов, фактур и расцветок позволяет подобрать удобную вещь, которая поможет почувствовать себя тепло и уютно. Пончо хорошо защищает от ветра, незаменимо в прохладные вечера. Обычно его носят в сухую погоду от +10°C.</p>
+            </div>
+        </section>
+        <section id="getdresschild">
+            <div class="pageHeader">
+                <h3><a href="https://vk.com/page-44003794_44192592">Как одевать ребенка весной (от рождения до года)</a></h3>
+                <p class="date">10 декабря, 2014</p>
+                <p>
+                    <i>Перепост с сайта группы <a href="https://vk.com/page-44003794_44192592">vkontakte</a></i>
+                    <br>
+                    &nbsp; &nbsp;Позади все морозы, метели и гололедица. Всё сильнее пригревает весеннее солнце, тает снег, на улице дольше не темнеет, и гулять с детьми всё приятней. &nbsp;
+                    <br>
+                    &nbsp; &nbsp;Но права, ох как права народная мудрость: весна красна, да обманчива. Ведь так легко можно простыть на весеннем ветерке! Отсюда главное правило сбора на прогулку – лучше пусть ребенок подмерзнет, чем вспотеет. &nbsp; &nbsp; Впрочем, некоторые бабушки делают другой вывод из этого правила: они закутывают своего подопечного как капусту и не велят бегать и прыгать, чтоб не вспотел. Но, согласитесь, ненормально активному и непоседливому ребенку чинно прогуливаться по парку как старичку. Итак, не бывает плохой погоды, бывает плохая экипировка.&nbsp;
+                    <br>
+                    <br>
+                    <span class="fontBold">Особенности прогулок в разном возрасте</span>
+                    <br>
+                    <br>
+                    <span class="fontBold"> 0-3 мес</span>
+                    <br>
+                    &nbsp; &nbsp;На променад по улице с новорожденным можно отправиться уже на следующий день после выписки из роддома. Для первого раза хватит и получаса, затем постепенно увеличивайте время прогулки. Помните, что перегрев для младенцев гораздо опасней переохлаждения, не кутайте, лучше захватите лишнее одеяло, пусть оно все время лежит в коляске. Если же вы гуляете с ребенком в слинге или кенгуру, не забывайте, что вы не только его «транспорт», но и персональный обогреватель. Самый надежный способ проверить, комфортно ли малышу – потрогать шейку. Если она горячая – ребенку жарко, несмотря на то, что нос и руки холодные.
+                    <br>
+                    &nbsp; &nbsp; Водителям колясок не стоит увлекаться драпировками: вполне достаточно полиэтиленовой накидки – в дождь. И только. Иначе нет смысла в прогулке без солнечного света и притока свежего воздуха.&nbsp;
+                    <br>
+                    <br>
+
+                    <span class="fontBold"> Как одевать на весеннюю прогулку младенца 0-3 мес </span>
+                    <br>
+                    <br>
+
+                    <table cellpadding="0" cellspacing="0" class="wkTable">
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;<i>&nbsp;Одежда/Температура (без учета ветра и влажности воздуха) </i> </td>
+                                <td><center><i>0…-5°C</i></center><center>&nbsp;</center> </td>
+                                <td><center><i>+1…+5°C</i></center><center>&nbsp;</center> </td>
+                                <td><center><i>До +10°C</i></center> </td>
+                                <td><center><i>До +15°C</i></center> </td>
+                                <td><center><i>До +18°C</i></center> </td>
+                            </tr>
+                            <tr>
+                                <td>Памперс </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Слип (хлопковый комбинезон с закрытыми ножками и иногда ручками) или боди с длинными рукавами и штанишки с носками (хлопок или фланель) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Хлопковый конверт или мешок </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Флисовый конверт или мешок </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Тонкая шапочка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Одеяло флисовое или байковое* </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    *Одеяло в коляске никогда не помешает: лучше одеть ребенка легче и потом укрыть одеялом, чем снимать лишнее на улице.&nbsp;
+                    <br>
+                    <br>
+
+                    <span class="fontBold"> 3-6 мес </span>
+                    <br>
+                    В этом возрасте многим детям уже не лежится на месте – они крутятся, вертятся и с любопытством озирают окрестности вместо беспробудного сна в коляске. Для таких малышей довольно удобны кофточки с капюшоном, толстовки, брюки. Кстати, одежда с капюшонами – незаменима в детском гардеробе. Особенно, когда ребенок гуляет без шапки (кстати, без нее можно вполне обойтись в безветренный день при +16…+180C) – чтобы быстро укрыть от дождя, сильного ветра или яркого солнца.&nbsp;
+                    <br>
+                    <br>
+
+                    <span class="fontBold"> Как одевать на весеннюю прогулку младенца 3-6 мес. </span>
+                    <br>
+                    <br>
+
+                    <table cellpadding="0" cellspacing="0" class="wkTable">
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;<i>Одежда/Температура (без учета ветра и влажности воздуха) </i> </td>
+                                <td><center><i>0…-5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>+1…+5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>До +10°C</i></center> </td>
+                                <td><center><i>До +15°C</i></center> </td>
+                                <td><center><i>До +18°C</i></center> </td>
+                            </tr>
+                            <tr>
+                                <td>Памперс </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Слип (хлопковый комбинезон с закрытыми ножками и иногда ручками) или боди с длинными рукавами и штанишки с носками (хлопок или фланель) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Боди с длинными рукавами </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Водолазка (трикотаж) </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Толстовка (хлопок, флис) или кофточка с капюшоном </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Брюки (хлопок, флис, вельвет) на мягкой резинке или джинсы с носками </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Флисовый конверт или комбинезон </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Тонкая шапочка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Одеяло флисовое или байковое* </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    *Одеяло в коляске никогда не помешает: лучше одеть ребенка легче и потом укрыть одеялом, чем снимать лишнее на улице.&nbsp;
+                    <br>
+                    <br>
+
+                    <span class="fontBold"> 6-9мес </span>
+                    <br>
+                    Большинство детей в этом возрасте уже восседают в прогулочных колясках , а спать предпочитают в своих кроватках. Значит, одним комбинезоном или спальным мешком для этих малышей не обойтись. Нужна удобная одежда и обувь, в которой ребенок мог бы сделать свой первый шаг. Или проползти свой первый метр.&nbsp;
+                    <br>
+                    <br>
+
+                    <span class="fontBold"> Как одевать на весеннюю прогулку младенца 6-9мес. </span>
+                    <br>
+                    <br>
+
+                    <table cellpadding="0" cellspacing="0" class="wkTable">
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;<i> Одежда/Температура (без учета ветра и влажности воздуха) </i> </td>
+                                <td><center><i>0…-5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>+1…+5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>До +10°C</i></center> </td>
+                                <td><center><i>До +15°C</i></center> </td>
+                                <td><center><i>До +18°C</i></center> </td>
+                            </tr>
+                            <tr>
+                                <td>Памперс </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Боди с рукавами </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Колготки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Комбинезон и варежки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Водолазка (трикотаж) </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Толстовка (хлопок, флис) или непромокаемая куртка с капюшоном на случай дождя </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Брюки (хлопок, флис, вельвет) на мягкой резинке или джинсы </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Тонкая шапочка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Шерстяные носки или утепленные пинетки (ботинки) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Легкие ботинки или носки </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Одеяло флисовое или байковое* </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    *Одеяло в коляске никогда не помешает: лучше одеть ребенка легче и потом укрыть одеялом, чем снимать лишнее на улице.&nbsp;
+                    <br>
+                    <br>
+
+                    <span class="fontBold"> 9-12мес </span>
+                    <br>
+                    В возрасте первых шагов особое внимание уделите детской обуви – она должна быть не только по ноге, но и удобной. Что касается одежды: не забывайте, дети часто падают, сидят в лужах и лежат на песке. Соответственно, пачкаются. Поэтому хорошо бы иметь с собой (да и дома тоже) запасной комплект одежды. А если вы приучаете своего малыша к горшку, значит, без запасных сухих штанишек не стоит и выходить из дома.&nbsp;
+                    <br>
+                    <br>
+
+                    <span class="fontBold"> Как одевать на весеннюю прогулку младенца 9-12мес </span>
+                    <br>
+                    <br>
+
+                    <table cellpadding="0" cellspacing="0" class="wkTable">
+                        <tbody>
+                            <tr>
+                                <td><i>&nbsp;Одежда/Температура (без учета ветра и влажности воздуха) </i> </td>
+                                <td><center><i>0…-5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>+1…+5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>До +10°C</i></center> </td>
+                                <td><center><i>До +15°C</i></center> </td>
+                                <td><center><i>До +18°C</i></center> </td>
+                            </tr>
+                            <tr>
+                                <td>Памперс (или трусики х/б) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Майка (футболка или боди с рукавами) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Колготки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Комбинезон и варежки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Водолазка (трикотаж) </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Толстовка (хлопок, флис) или непромокаемая куртка с капюшоном на случай дождя </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Брюки (хлопок, флис, вельвет) на мягкой резинке или джинсы </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Тонкая шапочка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Утепленные непромокаемые ботинки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Легкие ботинки или резиновые сапоги на случай дождя </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <span class="fontBold">12-18 месяцев&nbsp;</span> <br>
+                    &nbsp; В этом возрасте дети тренируются в беге, прыжках и прочих подвижных играх, а значит, их шансы вспотеть повышаются. Многим родителям чисто психологически бывает трудно снять с годовалого ребенка в апреле шапку или раздеть его до тонкой кофточки и джинсов. Но посудите сами: и лето в наших широтах бывает разным, но ведь даже при похолодании до +15 в июле, никто не надевает шубу! Так что ориентируйтесь только на термометр и собственные ощущения, забудьте про календарь и окружающих.&nbsp; <br><br>
+                    <span class="fontBold"> Как одевать на весеннюю прогулку младенца 12-18 месяцев&nbsp;</span> <br><br>
+                    <table cellpadding="0" cellspacing="0" class="wkTable">
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;<i>&nbsp;Одежда/Температура (без учета ветра и влажности воздуха) </i> </td>
+                                <td><center><i>0…-5</i><i>°</i><i>C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>+1…+5</i><i>°</i><i>C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>До +10</i><i>°</i><i>C</i></center> </td>
+                                <td><center><i>До +15</i><i>°</i><i>C</i></center> </td>
+                                <td><center><i>До +18</i><i>°</i><i>C</i></center> </td>
+                            </tr>
+                            <tr>
+                                <td>Памперс (или трусики х/б) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Майка (тонкая футболка) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Колготки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Водолазка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Толстовка (хлопок, флис) с капюшоном или дождевик (непромокаемый костюм) </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Брюки (хлопок, флис, вельвет) на мягкой резинке или джинсы </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Комбинезон (куртка и штаны удобнее, чем слитный вариант) и варежки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Тонкая шапочка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Мембранные ботинки (для активного движения, отводят пот от тела) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Легкие ботинки или резиновые сапоги на случай дождя </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                        </tbody>
+                    </table> <br>
+                    <br>
+                    <br>
+                    <span class="fontBold"> 18-24 мес ( 2-3 года )</span> <br>
+                    Одежда и обувь из современных материалов, которые отводят пот от тела и в тоже время не дают замерзнуть, в этом возрасте – не дань моде, а насущная необходимость. Дети уже хорошо бегают, знают множество подвижных игр и просто физически не в состоянии сидеть на одном месте. <br><br>
+                    <table cellpadding="0" cellspacing="0" class="wkTable">
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;<i> Одежда/Температура (без учета ветра и влажности воздуха) </i> </td>
+                                <td><center><i>0…-5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>+1…+5°C</i></center> <center>&nbsp;</center> </td>
+                                <td><center><i>До +10°C</i></center> </td>
+                                <td><center><i>До +15°C</i></center> </td>
+                                <td><center><i>До +18°C</i></center> </td>
+                            </tr>
+                            <tr>
+                                <td>Памперс (или трусики х/б) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Майка (футболка с синтетикой) </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Колготки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Водолазка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Комбинезон (мембрана) варежки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Толстовка (хлопок, флис) с капюшоном или дождевик (непромокаемый костюм) </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Брюки (хлопок, флис) на мягкой резинке или джинсы </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Тонкая шапочка </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Мембранные ботинки </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                            </tr>
+                            <tr>
+                                <td>Легкие ботинки или резиновые сапоги на случай дождя </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>&nbsp;</center> </td>
+                                <td><center>+</center> </td>
+                                <td><center>+</center> </td>
+                            </tr>
+                        </tbody>
+                    </table> <br>
+                    Конечно, это лишь один пример как одевать ребенка весной, у вас может получиться совсем другой список. Но помните об опасности перегрева и если сомневаетесь: надевать или не надевать ребенку еще одну кофточку – не надевайте. Просто возьмите ее с собой, если вам так спокойнее. Или забудьте дома. Ведь и закаляться пора, в конце концов!&nbsp;
+
+            </div>
+        </section>
+    </div>
+        }

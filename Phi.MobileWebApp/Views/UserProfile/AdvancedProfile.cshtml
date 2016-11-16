@@ -1,0 +1,94 @@
+﻿@model Phi.MobileWebApp.Models.AdvancedProfileViewModel
+@using Phi.MobileWebApp.Resources
+@using Phi.Repository.Extensions
+@{
+    ViewBag.Title = GlobalResources.Profile;
+}
+
+@Styles.Render("~/Content/profile")
+@*@Scripts.Render("~/bundles/profile")*@
+
+<script>
+    var jsError = "@GlobalResources.JSError"
+</script>
+<script src="~/Scripts/Common.js?v=3"></script>
+<script src="~/Scripts/jquery-ui.min-1.11.1.js"></script>
+<script src="~/Scripts/AdvancedProfile.js?v=3"></script>
+<div class="youProfile">
+
+<h3>@GlobalResources.TellUs</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    <div class="grayed-text">@GlobalResources.ManageWeatherEventSubscriptions</div>
+    <div class="grayed-text">@GlobalResources.NotificationsOnly</div>
+    <div class="inpCont">
+        @Html.CheckBoxFor(x => x.NotifyAboutWeatherEvents) 
+        <div class="title">@GlobalResources.NotifyMeAboutWeatherEvents </div>
+    </div>
+    <div class="grayed-text">@GlobalResources.FillCompanyInfo</div>
+    <div class="title">@GlobalResources.CompanyName </div>
+    <div class="inpCont">@Html.TextBoxFor(x => x.CompanyName)</div>
+    <div class="title">@GlobalResources.CompanyCEO </div>
+    <div class="inpCont">@Html.TextBoxFor(x => x.CompanyCEO)</div>
+    <div class="title">@GlobalResources.CompanyPhone </div>
+    <div class="inpCont">@Html.TextBoxFor(x => x.CompanyPhone)</div>
+    <div class="title">@GlobalResources.CompanyFax </div>
+    <div class="inpCont">@Html.TextBoxFor(x => x.CompanyFax)</div>
+    <div class="title">@GlobalResources.CompanyEmail </div>
+    <div class="inpCont">@Html.TextBoxFor(x => x.CompanyEmail)</div>
+    <div class="title">@GlobalResources.MainCompanyUrl </div>
+    <div class="inpCont">@Html.TextBoxFor(x => x.MainCompanyUrl)</div>
+    <div class="title">@GlobalResources.SellCompanyUrl </div>
+    <div class="inpCont">@Html.TextBoxFor(x => x.SellCompanyUrl)</div>
+    <div class="title">@GlobalResources.AdditionalInfo </div>
+    <div class="inpCont">@Html.TextAreaFor(x => x.AdditionalInfo)</div>
+    <div class="grayed-text">@GlobalResources.ItemProviders</div>
+    <div class="grayed-text">@GlobalResources.ItemProvidersDescription</div>
+    <!-- Template is used for adding location by client javascript by copying this template. -->
+    <div id="SelectedLocation" class="selectedLocation" onclick="SetActiveLocation(this);" style="display: none;">
+        <div class="selectedContent"></div>
+        <div class="selectedClose" onclick="CloseSelected(this.parentNode);">&#215;</div>
+    </div>
+    <!-- End tempalte -->
+        <div class="title">@GlobalResources.Location</div>
+        <div class="inpCont">
+            <input id="Location" class="location-container-textbox" name="@GlobalResources.Location" type="text" value="" placeholder="@GlobalResources.PleaseTypeYourLocation">
+            <!-- Panel for adding location -->
+            <div id="SelectedLocationContainer"></div>
+            <!-- End Panel -->
+        </div>
+    <div class="profileEdit">
+        <div class="inpCont">
+            <button name="button" type="submit">@GlobalResources.SaveChanges <span class="icon-arrow-next icon-white"></span></button>
+            @Html.ActionLink(GlobalResources.Cancel, "Cancel")
+        </div>
+    </div>
+    <!-- Popup for showing error or warning messages -->
+    <div id="Errorer" class="popover errorer left">
+        <div class="arrow"></div>
+        <div>
+            <h3 class="popover-title">
+                @GlobalResources.WarningHeader
+                <span class="errorerClose" onclick="CloseElement(this.parentNode.parentNode.parentNode);">&#215;</span>
+            </h3>
+        </div>
+        <div class="popover-content">
+            <p></p>
+        </div>
+    </div>
+    <!-- End Popup -->
+
+    <!-- Popup for showing messages -->
+    <div id="Reminder" class="popover reminder top" data-isallowed="@Request.IsAuthenticated">
+        <div class="arrow"></div>
+        <div class="popover-content">
+            <span class="reminderClose" onclick="CloseElement(this.parentNode.parentNode);">&#215;</span>
+            <p></p>
+        </div>
+    </div>
+    <!-- End Popup -->
+}
+</div>

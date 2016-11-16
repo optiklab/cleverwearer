@@ -1,0 +1,49 @@
+﻿@using Phi.MobileWebApp.Resources
+@model Phi.MobileWebApp.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = GlobalResources.Register;
+}
+@*<script>
+    if (window.location.href.indexOf('ReturnUrl=%2fAccount%2fAuthorize') < 0)
+    {
+        window.location = "/Account/Authorize?client_id=web&response_type=token&state=";
+    }
+</script>*@
+@if (string.IsNullOrEmpty(ViewBag.LoginProvider))
+{
+    <h3>@String.Format(GlobalResources.AssociateAccountFormat, ViewBag.LoginProvider)</h3>
+}
+else
+{
+    <h3>@GlobalResources.AssociateSocialAccount</h3>
+}
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "textDanger" })
+    <p class="text-info">
+        @if (!string.IsNullOrEmpty(ViewBag.LoginProvider))
+        {
+            @String.Format(GlobalResources.SuccessfullyAuthenticatedFormat, ViewBag.LoginProvider)
+        }
+    </p>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "textDanger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default w186" value="Register" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,46 @@
+﻿@model Phi.MobileWebApp.Models.ToolsViewModel
+@using Phi.MobileWebApp.Resources
+@{
+    ViewBag.Title = "Save instagram content";
+}
+
+@Styles.Render("~/Content/tools")
+
+<script src="~/Scripts/Common.min.js?v=4"></script>
+<script src="~/Scripts/ToolsScripts.js?v=1"></script>
+
+<script>
+    @*if (@Model.Url != "")
+    {
+        try {
+            var feed = new Instafeed({
+                get: 'tagged',
+                limit: 8,
+                tagName: location,
+                template: "<a style='margin-bottom:5px;' href='{{link}}' target='_blank'><img src='{{image}}' /></a>",
+                clientId: '08862dc6cee04f5184d800100bebaf58'
+            });
+            feed.run();
+        }
+        catch (e) {
+        }
+    }*@
+</script>
+
+<div class="saveInstagramContainer">
+    <h4>@GlobalResources.CleverWearerEnterHeader</h4>
+    <section id="saveInstagramForm" class="saveInstagramForm">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(false)
+            @Html.LabelFor(m => m.Path)
+            @Html.TextBoxFor(m => m.Path)
+            @*<button name="button" onclick="DownloadInstagramContent()">Save <span class="icon-arrow-next icon-white"></span></button>*@
+
+            <button name="button" type="submit">Save <span class="icon-arrow-next icon-white"></span></button>
+        }
+    </section>
+
+    <div id="instafeed" class="instafeed"></div>
+</div>

@@ -1,0 +1,18 @@
+﻿@using Phi.MobileWebApp.Resources
+@using Phi.Repository.Extensions
+@{
+    ViewBag.Title = @GlobalResources.ContactPage;
+}
+<h2>@ViewBag.Title.</h2>
+
+<address>
+    @GlobalResources.CompanyAddress.ToHtmlString() <br/><br />
+
+    <abbr title="Phone">Phone:</abbr>
+    +7-928-954-12-33
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:support@cleverwearer.com">support@smartwearer.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:marketing@cleverwearer.com">marketing@smartwearer.com</a>
+</address>

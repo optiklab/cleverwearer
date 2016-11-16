@@ -1,0 +1,174 @@
+﻿@using Phi.MobileWebApp.Resources
+@using Phi.MobileWebApp.Models
+@using Phi.Repository.Extensions
+@model LoginViewModel
+
+@{
+    ViewBag.Title = GlobalResources.LoginPage;
+}
+
+<script>
+    if (window.location.href.indexOf('ReturnUrl=%2fAccount%2fAuthorize') < 0) {
+        var index = window.location.href.indexOf('ReturnUrl');
+        if (index > 0) {
+            var lang = '';
+            if (window.location.href.indexOf('%2Fen%2F') > 0) {
+                lang = '/en';
+            }
+            var href = window.location.protocol + "//" + window.location.host + lang + window.location.pathname;
+            window.location.href = href + "?ReturnUrl=%2fAccount%2fAuthorize%3fclient_id%3dweb%26response_type%3dtoken%26state%3d";
+        }
+        else {
+            window.location.href = window.location.href + "?ReturnUrl=%2fAccount%2fAuthorize%3fclient_id%3dweb%26response_type%3dtoken%26state%3d";
+        }
+    }
+</script>
+<div class="loginContainer">
+    <article>
+        @GlobalResources.CleverWearerDescription.ToHtmlString() @*<b>@GlobalResources.ForFree</b>*@
+    </article>
+    <h4>@GlobalResources.CleverWearerEnterHeader</h4>
+    <section id="loginForm" class="loginForm">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @*<h4>@GlobalResources.UseLocalAccountToLogIn</h4>*@
+            @Html.ValidationSummary(true, "", new { @class = "textDanger" })
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "textDanger" })
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "textDanger" })
+            <div class="checkbox">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+            <input type="submit" value="@GlobalResources.LogIn"/>
+            @*@Html.ActionLink(GlobalResources.Register, "Register", "Account", null)*@
+            @* Enable this once you have account confirmation enabled for password reset functionality*@
+            @Html.ActionLink(GlobalResources.ForgotPassword, "ForgotPassword")
+        }
+    </section>
+    <div class="socialLogin">
+        @GlobalResources.OR
+    </div>
+    <section id="socialLoginForm" class="socialLogin">
+        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
+    </section>
+</div>
+
+
+
+@*
+    <div class="row header-row-margin w812">
+        <div class="col-md-4 full-width"><hr /></div>
+        <div class="col-md-4 w220 top39 section-header">
+            @GlobalResources.CleverWearerFunctionsHeader
+        </div>
+    </div>
+    @if (GlobalResources.CurrentLang == "en")
+    {
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 row-content-image"><img src="~/img/umbrella-icon.png" /></div>
+            <div class="col-md-3 row-content">Weather in any city</div>
+            <div class="col-md-2 row-content-image"><img src="~/img/ember-js-icon.png" /></div>
+            <div class="col-md-3 row-content">Recommendations of comfort clothing for weather conditions</div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 row-content-image"><img src="~/img/announcement-7-icon.png" /></div>
+            <div class="col-md-3 row-content">Informing about sudden climat changes</div>
+            <div class="col-md-2 row-content-image"><img src="~/img/directions-icon.png" /></div>
+            <div class="col-md-3 row-content">Planning wardrobe for a trip</div>
+            <div class="col-md-1"></div>
+        </div>
+    }
+    else
+    {
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 row-content-image"><img src="~/img/umbrella-icon.png" /></div>
+            <div class="col-md-3 row-content">Погода любого города мира</div>
+            <div class="col-md-2 row-content-image"><img src="~/img/ember-js-icon.png" /></div>
+            <div class="col-md-3 row-content">Советы комфортной одежды под погодные условия</div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 row-content-image"><img src="~/img/announcement-7-icon.png" /></div>
+            <div class="col-md-3 row-content">Предупреждения о резких погодных изменениях</div>
+            <div class="col-md-2 row-content-image"><img src="~/img/directions-icon.png" /></div>
+            <div class="col-md-3 row-content">Планирование гардероба для путешествия</div>
+            <div class="col-md-1"></div>
+        </div>
+    }
+    <div class="row header-row-margin">
+        <div class="col-md-4 full-width"><hr /></div>
+        <div class="col-md-4 w280 top39 section-header">
+            @GlobalResources.CleverWearerFutureFunctionsHeader
+        </div>
+    </div>
+    @if (GlobalResources.CurrentLang == "en")
+    {
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 row-content-image"><img src="~/img/share-2-icon.png" /></div>
+            <div class="col-md-3 row-content">Share your wardrobe with people</div>
+            <div class="col-md-2 row-content-image"><img src="~/img/degree-icon.png" /></div>
+            <div class="col-md-3 row-content">See what people dress in your city</div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 row-content-image"><img src="~/img/shield-icon.png" /><img src="~/img/iphone-icon.png" /></div>
+            <div class="col-md-7 row-content">We have to move to HTTPS and create new mobile applications but we need your support!</div>
+            <div class="col-md-1"></div>
+        </div>
+    }
+    else
+    {
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 row-content-image"><img src="~/img/share-2-icon.png" /></div>
+            <div class="col-md-3 row-content">Возможность делиться гардеробом со всеми</div>
+            <div class="col-md-2 row-content-image"><img src="~/img/degree-icon.png" /></div>
+            <div class="col-md-3 row-content">Статистика того, что одевают люди вашего города</div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row row-margin w812">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 row-content-image"><img src="~/img/shield-icon.png" /><img src="~/img/iphone-icon.png" /></div>
+            <div class="col-md-7 row-content">В планах переход на HTTPS и развитие в направлении мобильных приложений, так что просим писать, лайкать и поддерживтаь проект.</div>
+            <div class="col-md-1"></div>
+        </div>
+    }
+    <!--<div class="row header-row-margin">
+        <div class="col-md-5 full-width"><hr /></div>
+        <div class="col-md-2 w122 section-header top39">
+            @GlobalResources.CleverWearerMoney
+        </div>
+    </div>
+    @if (GlobalResources.CurrentLang == "en")
+    {
+        <div class="row w812 row-margin w812">
+            <div class="col-md-2 row-content-image"><img src="~/img/fwisp-icon.png" /></div>
+            <div class="col-md-10 row-content">We will be glad to any support by words, letters, useful contacts or money.</div>
+        </div>
+    }
+    else
+    {
+        <div class="row w812 row-margin w812">
+            <div class="col-md-2 row-content-image"><img src="~/img/fwisp-icon.png" /></div>
+            <div class="col-md-10 row-content">Мы не откажемся от поддержки словом, контактом или монеткой.</div>
+        </div>
+    }
+    <br/>-->
+    <div class="row w812 row-margin">
+        <img class="w812" src="../../img/infographic.png">
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    } *@

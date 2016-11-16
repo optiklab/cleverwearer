@@ -1,0 +1,997 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>О нашей компании</value>
+  </data>
+  <data name="AboutPage" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="AssociateAccountFormat" xml:space="preserve">
+    <value>Регистрация через Ваш {0} аккаунт.</value>
+  </data>
+  <data name="AssociationForm" xml:space="preserve">
+    <value>Форма соединения</value>
+  </data>
+  <data name="AvatarPicture" xml:space="preserve">
+    <value>Аватар</value>
+  </data>
+  <data name="GetNotifications" xml:space="preserve">
+    <value>Получайте уведомления</value>
+  </data>
+  <data name="ShareYourChoice" xml:space="preserve">
+    <value>Делитесь со всеми</value>
+  </data>
+  <data name="BlogPage" xml:space="preserve">
+    <value>Блог</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="ChangePasswordForm" xml:space="preserve">
+    <value>Форма изменения пароля</value>
+  </data>
+  <data name="CheckEmailToConfirmRegistration" xml:space="preserve">
+    <value>Для подтверждения регистрации перейдите по ссылке,которую мы отправили на указанный e-mail.</value>
+  </data>
+  <data name="ClickToLogin" xml:space="preserve">
+    <value>кликните ссылку для входа</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>Планета Земля&lt;br /&gt;
+Солнечная система&lt;br /&gt;
+Рука Ориона&lt;br /&gt;
+Млечный путь&lt;br /&gt;
+Суперкластер Вирго&lt;br /&gt;
+Вселенная</value>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Аккаунт подтверждён</value>
+  </data>
+  <data name="ConfirmEmailFailed" xml:space="preserve">
+    <value>Подтвердить e-mail не удалось.</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Повторите пароль</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Повторите пароль</value>
+  </data>
+  <data name="ConfirmRegistrationHeader" xml:space="preserve">
+    <value>Подтвердите свою регистрацию</value>
+  </data>
+  <data name="ConfirmYourAccount" xml:space="preserve">
+    <value>Подтвердите свою регистрацию</value>
+  </data>
+  <data name="ConfirmYourAccountContent" xml:space="preserve">
+    <value>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;html&gt;
+	&lt;head&gt;&lt;/head&gt;
+	&lt;body&gt;
+		&lt;table width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff;"&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td style="padding: 0px;"&gt;
+					&lt;table width="700" cellspacing="0" cellpadding="0" border="0" align="center" style="background-color: #eaeaea; table-layout: fixed;"&gt;
+						&lt;tbody&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+								&lt;table width="700" height="100" cellspacing="0" cellpadding="0" border="0"&gt;
+									&lt;tbody&gt;
+										&lt;tr&gt;
+											&lt;td style="width: 30px; height: 100px;"&gt;&lt;/td&gt;
+											&lt;td style="width: 120px; height: 100px;"&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/CleverWearerIcon_48px.png" width="48px" height="48px" /&gt;&lt;/td&gt;
+											&lt;td style="width: 380px; height: 100px;"&gt;&lt;/td&gt;
+											&lt;td style="width: 160px; height: 100px;"&gt;
+											&lt;/td&gt;
+											&lt;td style="width: 10px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;
+								&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td class="ecxcontent" style="background-color: #ffffff; padding: 0px;"&gt;
+								&lt;table class="ecxmain-content" width="700" cellspacing="0" cellpadding="0" border="0" align="center" style="border: 0px; background-color: #ffffff;"&gt;
+									&lt;tbody&gt;
+										&lt;tr&gt;
+											&lt;td style="height: 30px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td style="padding: 0px; width: 75px; font-size: 1px;"&gt; &lt;/td&gt;
+											&lt;td valign="top" style="padding: 0px;"&gt;
+											&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;Приветствуем Вас!&lt;/span&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;Вы только что создали аккаунт в Clever Wearer. Для завершения регистрации, пожалуйста, подтвердите свой e-mail перейдя по &lt;a href='{0}'&gt;ссылке&lt;/a&gt; или нажав кнопку ниже&lt;/span&gt;
+											&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;table class="ecxmedia_button" cellspacing="0" cellpadding="0" border="0" style="white-space: nowrap; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border: 1px solid #2288cc; text-align: center; height: 28px; background-color: #6982ef;"&gt;
+												&lt;tbody&gt;
+													&lt;tr&gt;
+														&lt;td class="spacer" style="font-size: 1px; padding: 0px; width: 10px;"&gt; &lt;/td&gt;
+														&lt;td align="center" style="padding: 0px; height: 28px;"&gt;&lt;span style="text-shadow: #339bde 0px -1px 0px; white-space: nowrap; overflow: hidden; padding: 0px; font-family: 'helvetica neue', helvetica, arial, sans-serif; font-size: 13px; color: #ffffff;"&gt;
+														&lt;a style="border: none; color: #ffffff; text-decoration: none;" target="_blank" href="{0}"&gt;Подтвердить&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;
+														&lt;td class="spacer" style="font-size: 1px; padding: 0px; width: 10px;"&gt; &lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/tbody&gt;
+											&lt;/table&gt;
+											&lt;br /&gt;&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;
+											Мы помогаем &lt;b&gt;&lt;i&gt;одеться по погоде&lt;/i&gt;&lt;/b&gt; и &lt;b&gt;&lt;i&gt;спланировать гардероб&lt;/i&gt;&lt;/b&gt; для путешествия, а также &lt;b&gt;&lt;i&gt;заранее предупреждаем о сюпризах природы&lt;/i&gt;&lt;/b&gt;.&lt;br /&gt;
+											&lt;br /&gt;
+											1. Чтобы получать информацию об одежде по погоде, заполните поле Местоположение в своём профиле.&lt;br /&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/LocationRus.png" width="662px" height="309px" /&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											2. Чтобы спланировать путешествие вы можете посмотреть прогноз сразу для нескольких городов мира на неделю вперёд.&lt;br /&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/NotificationsRus.jpg" width="651px" height="245px" /&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											3. Чтобы получать информацию о резких погодных изменениях, установите галочку в Расширенных настройках Профиля.&lt;br /&gt;
+											&lt;img alt="" src="http://cleverwearer.com/img/ForecastRus.jpg" width="296px" height="107px" /&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;br /&gt;
+											С любым вопросами и пожеланиями можете обращаться прямо в ответе на этот e-mail или по адресу &lt;a href="mailto:{1}"&gt;{1}&lt;/a&gt;&lt;/span&gt;
+											&lt;td style="padding: 0px; width: 75px; font-size: 1px;"&gt; &lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td style="height: 30px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;
+								&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td style="padding: 0px;"&gt;
+								&lt;table width="700" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border: 0px;"&gt;
+									&lt;tbody&gt;
+										&lt;tr&gt;
+											&lt;td class="ecxfooter-padding-top" style="padding: 0px; height: 10px;" colspan="4"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;
+											&lt;span style="font-size: 13px; font-family: 'segoe ui', helvetica, arial, sans-serif; color: #888888;"&gt;Спасибо,&lt;/span&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;span style="font-size: 13px; font-family: 'segoe ui', helvetica, arial, sans-serif; color: #888888;"&gt;Ваш Clever Wearer&lt;/span&gt;
+											&lt;br /&gt;
+											&lt;span style="font-family: 'segoe ui', helvetica, arial, sans-serif; font-size: 13px; color: #333333;"&gt;{1}&lt;/span&gt;&lt;br /&gt;
+											&lt;br /&gt;
+											&lt;/td&gt;
+											&lt;td style="width: 75px; padding: 0px;"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td style="padding: 0px; height: 15px;" colspan="3"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;
+								&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;
+					&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ConfirmYourAccountContentPlainText" xml:space="preserve">
+    <value>Приветствуем Вас! Вы только что создали аккаунт в Clever Weather. Пожалуйста, подтвердите свой e-mail перейдя по ссылке: {0}. С любым вопросами и пожеланиями можете обращаться прямо в ответе на этот e-mail или по адресу {1}.</value>
+  </data>
+  <data name="ResetYourPasswordSubject" xml:space="preserve">
+    <value>Сброс пароля на Clever Wearer</value>
+  </data>
+  <data name="ResetYourPasswordContent" xml:space="preserve">
+    <value>Вы можете сбросить свой пароль перейдя по &lt;a href='{0}'&gt;ссылке&lt;/a&gt;.</value>
+  </data>
+  <data name="ResetYourPasswordContentPlainText" xml:space="preserve">
+    <value>Вы можете сбросить свой пароль перейдя по ссылке: {0}</value>
+  </data>
+  <data name="ContactDescription" xml:space="preserve">
+    <value>Наши контакты</value>
+  </data>
+  <data name="ContactPage" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="CreateLocalLogin" xml:space="preserve">
+    <value>Создать пару логин-пароль</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Текущий пароль</value>
+  </data>
+  <data name="DontDeleteCity" xml:space="preserve">
+    <value>Для рекомендаций нам нужен хотя бы один город</value>
+  </data>
+  <data name="DoRegister" xml:space="preserve">
+    <value>Зарегистрируйтесь</value>
+  </data>
+  <data name="DoSignIn" xml:space="preserve">
+    <value>Войдите</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EnterForProviders" xml:space="preserve">
+    <value>Если у Вас уже есть свой сайт собственной линии одежды или Вы представитель магазина или сети магазинов, то как можно полнее заполните профиль с информацией о себе. Наши менеджеры свяжутся с Вами в кратчайшие сроки и Ваша одежда появится в наших рекомендациях.</value>
+  </data>
+  <data name="EnterYourEmail" xml:space="preserve">
+    <value>Введите свой e-mail.</value>
+  </data>
+  <data name="FeelsLike" xml:space="preserve">
+    <value>Ощущаемая температура</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Заполнить</value>
+  </data>
+  <data name="FillStoreProfile" xml:space="preserve">
+    <value>Заполните свой профиль чтобы получать более точные рекомендации в Вашем городе</value>
+  </data>
+  <data name="FillYourCloakroom" xml:space="preserve">
+    <value>Заполните свой электронный гардероб, чтобы получать рекомендации по выбору своей одежды и делиться своим выбором с другими</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Забыли пароль?</value>
+  </data>
+  <data name="ForgotPasswordConfirmation" xml:space="preserve">
+    <value>Подтверждение забытого пароля</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Забыли свой пароль?</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Пол</value>
+  </data>
+  <data name="HelloThere" xml:space="preserve">
+    <value>Привествуем Вас!</value>
+  </data>
+  <data name="HelloUserFormat" xml:space="preserve">
+    <value>Привет {0}!</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Humidity" xml:space="preserve">
+    <value>Влажность</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Узнать больше</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Местоположение</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="LoginFailure" xml:space="preserve">
+    <value>Ошибка входа</value>
+  </data>
+  <data name="LoginPage" xml:space="preserve">
+    <value>Приветствую Вас на сайте Clever Wearer!</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="ManageAccount" xml:space="preserve">
+    <value>Управление Вашим аккаунтом</value>
+  </data>
+  <data name="ManageAccountPage" xml:space="preserve">
+    <value>Управление аккаунтом</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Новый пароль</value>
+  </data>
+  <data name="Nickname" xml:space="preserve">
+    <value>Ник</value>
+  </data>
+  <data name="OurGoals" xml:space="preserve">
+    <value>Мы агрегируем самые интересные новости обо всём носимом и одеваемом на стыке бытового применения и мира высоких технологий. 
+Здесь вы найдете новости и информацию об умной одежде, часах, фитнес трекерах, умных ювелирных изделиях, трекрах здоровья и любом новейшем умном устройстве, 
+которое вскоре может оказаться у вас дома или быть надето на вас.
+
+К тому же, мы создаём платформу для подбора оптимальных комфортных характеристик вашей умной, или пока не очень, одежды, либо носимой электроники.
+С помощью нашего сайта вам может быть легче подобрать одежду для ближайшего путешествия в любую точку планеты.</value>
+    <comment>йш</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="PleaseTypeUniqueLocation" xml:space="preserve">
+    <value>Введите пожалуйста новый город</value>
+  </data>
+  <data name="PleaseTypeYourLocation" xml:space="preserve">
+    <value>Введите название города</value>
+  </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>Давление</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="ProfileCreated" xml:space="preserve">
+    <value>Профиль создан</value>
+  </data>
+  <data name="RecommendedProfileInfo" xml:space="preserve">
+    <value>Поля ниже заполнять не обязательно, но они могут сделать Ваш профиль более красивым</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="RegisteredLogins" xml:space="preserve">
+    <value>Вы зарегистрированы с помощью</value>
+  </data>
+  <data name="RegisterNew" xml:space="preserve">
+    <value>Зарегистрироваться как новый пользователь</value>
+  </data>
+  <data name="RegisterPage" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="RegisterShopFormat" xml:space="preserve">
+    <value>Заполните свой &lt;b&gt;{0}&lt;/b&gt;, чтобы ваш модельный ряд появился в подсказках.</value>
+  </data>
+  <data name="RememberBrowser" xml:space="preserve">
+    <value>Запомнить этот браузер?</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Помнить всегда?</value>
+  </data>
+  <data name="ReminderHeader" xml:space="preserve">
+    <value>На заметку!</value>
+  </data>
+  <data name="RequiredProfileInfo" xml:space="preserve">
+    <value>Мы рекомендуем заполнить данные поля, чтобы улучшить Ваши рекомендации</value>
+  </data>
+  <data name="ResetPasswordConfirmation" xml:space="preserve">
+    <value>Подтверждение сброса пароля</value>
+  </data>
+  <data name="ResetPasswordPage" xml:space="preserve">
+    <value>Сброс пароля</value>
+  </data>
+  <data name="ResetYourPassword" xml:space="preserve">
+    <value>Сбросьте Ваш пароль.</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SmartWearerTeam" xml:space="preserve">
+    <value>Антон Ярков aka OptikLab</value>
+  </data>
+  <data name="SuccessfullyAuthenticatedFormat" xml:space="preserve">
+    <value>Вы успешно Вошли под Вашим {0}-аккаунтом. Пожалуйста, подтвердите Ваш E-mail и нажмите Регистрация, чтобы выполнить вход.</value>
+  </data>
+  <data name="SuggestionsError" xml:space="preserve">
+    <value>Что-то пошло не так</value>
+  </data>
+  <data name="Sunrise" xml:space="preserve">
+    <value>Время восхода</value>
+  </data>
+  <data name="Sunset" xml:space="preserve">
+    <value>Время заката</value>
+  </data>
+  <data name="TellUs" xml:space="preserve">
+    <value>Ваш профиль</value>
+  </data>
+  <data name="ThankYouForConfirm" xml:space="preserve">
+    <value>Спасибо за подтверждение аккаунта. Теперь Вы можете &lt;a href="/UserProfile/Profile"&gt;заполнить свой профиль и гардероб&lt;/a&gt;, чтобы носить комфортную одежду в любую погоду!</value>
+  </data>
+  <data name="UnsuccessfulLogin" xml:space="preserve">
+    <value>Вход не выполнен.</value>
+  </data>
+  <data name="UploadButton" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="UseAnotherServiceToLogin" xml:space="preserve">
+    <value>Войти через социальные сети</value>
+  </data>
+  <data name="GetNotificationsFull" xml:space="preserve">
+    <value>Получайте уведомления о возможных резких погодных изменениях.</value>
+  </data>
+  <data name="UseDragAndDrop" xml:space="preserve">
+    <value>или используйте Drag&amp;Drop в область картинки</value>
+  </data>
+  <data name="UseLocalAccountToLogIn" xml:space="preserve">
+    <value>Войдите или зарегистрироваться с логином и паролем.</value>
+  </data>
+  <data name="Visibility" xml:space="preserve">
+    <value>Видимость</value>
+  </data>
+  <data name="WarningHeader" xml:space="preserve">
+    <value>Упс...</value>
+  </data>
+  <data name="WhatDoWeKnow" xml:space="preserve">
+    <value>Вот, что ещё мы знаем о Вас.</value>
+  </data>
+  <data name="WindE" xml:space="preserve">
+    <value>Восточный ветер (E)</value>
+  </data>
+  <data name="WindENE" xml:space="preserve">
+    <value>Восточный ветер (ENE)</value>
+  </data>
+  <data name="WindESE" xml:space="preserve">
+    <value>Восточный ветер (ESE)</value>
+  </data>
+  <data name="WindN" xml:space="preserve">
+    <value>Северный ветер (N)</value>
+  </data>
+  <data name="WindNE" xml:space="preserve">
+    <value>Северо-Восточный ветер (NE)</value>
+  </data>
+  <data name="WindNNE" xml:space="preserve">
+    <value>Северный ветер (NNE)</value>
+  </data>
+  <data name="WindNNW" xml:space="preserve">
+    <value>Северный ветер (NNW)</value>
+  </data>
+  <data name="WindNW" xml:space="preserve">
+    <value>Северо-Западный ветер (NW)</value>
+  </data>
+  <data name="WindS" xml:space="preserve">
+    <value>Южный ветер (S)</value>
+  </data>
+  <data name="WindSE" xml:space="preserve">
+    <value>Юго-Восточный ветер (SE)</value>
+  </data>
+  <data name="WindSpeed" xml:space="preserve">
+    <value>Скорость ветра</value>
+  </data>
+  <data name="WindSSE" xml:space="preserve">
+    <value>Южный ветер (SSE)</value>
+  </data>
+  <data name="WindSSW" xml:space="preserve">
+    <value>Южный ветер (SSW)</value>
+  </data>
+  <data name="WindSW" xml:space="preserve">
+    <value>Юго-Западный ветер (SW)</value>
+  </data>
+  <data name="WindW" xml:space="preserve">
+    <value>Западный ветер (W)</value>
+  </data>
+  <data name="WindWNW" xml:space="preserve">
+    <value>Западный ветер (WNW)</value>
+  </data>
+  <data name="WindWSW" xml:space="preserve">
+    <value>Западный ветер (WSW)</value>
+  </data>
+  <data name="YouDontHaveAccount" xml:space="preserve">
+    <value>На данный момент у вас нет пары логин-пароль к нашему сайту. Вы можете указать свой пароль, чтобы входить на сайт без внешнего поставщика. </value>
+  </data>
+  <data name="YouLoggedInAs" xml:space="preserve">
+    <value>Вы вошли как</value>
+  </data>
+  <data name="YourPasswordReset" xml:space="preserve">
+    <value>Ваш пароль был сброшен. Пожалуйста</value>
+  </data>
+  <data name="СheckEmailToResetPassword" xml:space="preserve">
+    <value>Мы выслали инструкции для сброса пароля на ваш e-mail.</value>
+  </data>
+  <data name="DressingRoom" xml:space="preserve">
+    <value>Гардероб</value>
+  </data>
+  <data name="JSError" xml:space="preserve">
+    <value>Что-то пошло не так!</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Пожалуйста,подождите!</value>
+  </data>
+  <data name="EmailLenghtLimit" xml:space="preserve">
+    <value>Поле Email должно быть не больше 100.</value>
+  </data>
+  <data name="FirstNameLenghtLimit" xml:space="preserve">
+    <value>Поле Имя должно быть не больше 50.</value>
+  </data>
+  <data name="LastNameLenghtLimit" xml:space="preserve">
+    <value>Поле Фамилия должно быть не больше 50.</value>
+  </data>
+  <data name="UrlLenghtLimit" xml:space="preserve">
+    <value>Поле Url должно быть не больше 255.</value>
+  </data>
+  <data name="UserNameLenghtLimit" xml:space="preserve">
+    <value>Поле Ник должно быть не больше 50.</value>
+  </data>
+  <data name="UserNameRequired" xml:space="preserve">
+    <value>Поле Ник является обязательным для заполнения.</value>
+  </data>
+  <data name="CurrentLang" xml:space="preserve">
+    <value>ru</value>
+  </data>
+  <data name="LocationLenghtLimit" xml:space="preserve">
+    <value>Поле Location должно быть не больше 100.</value>
+  </data>
+  <data name="SelectedLocationLenghtLimit" xml:space="preserve">
+    <value>Поле Selected Location должно быть не больше 100.</value>
+  </data>
+  <data name="PasswordCompare" xml:space="preserve">
+    <value>Значения в поле подтверждения пароля и в поле ввода пароля не совпадают.</value>
+  </data>
+  <data name="PasswordLenghtLimit" xml:space="preserve">
+    <value>Пароль должен быть как минмум 6 символов.</value>
+  </data>
+  <data name="SeeResult" xml:space="preserve">
+    <value>Итак, посмотрите, что мы выбрали для Вас:</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>Дополнительная Информация</value>
+  </data>
+  <data name="AdditionalInfoLenghtLimit" xml:space="preserve">
+    <value>Поле Дополнительная Информация должно быть не больше 2000.</value>
+  </data>
+  <data name="AdvancedProfileSettings" xml:space="preserve">
+    <value>Сохранить и перейти к расширенным настройкам профиля</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="CompanyCEO" xml:space="preserve">
+    <value>ФИО Директора</value>
+  </data>
+  <data name="CompanyCEOLenghtLimit" xml:space="preserve">
+    <value>Поле ФИО Директора должно быть не больше 255.</value>
+  </data>
+  <data name="CompanyEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="CompanyEmailLenghtLimit" xml:space="preserve">
+    <value>Поле Email должно быть не больше 255.</value>
+  </data>
+  <data name="CompanyFax" xml:space="preserve">
+    <value>Факс</value>
+  </data>
+  <data name="CompanyFaxLenghtLimit" xml:space="preserve">
+    <value>Поле Факс должно быть не больше 50.</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Название Организации</value>
+  </data>
+  <data name="CompanyNameLenghtLimit" xml:space="preserve">
+    <value>Поле Название Организации должно быть не больше 255.</value>
+  </data>
+  <data name="CompanyPhone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="CompanyPhoneLenghtLimit" xml:space="preserve">
+    <value>Поле Телефон должно быть не больше 50.</value>
+  </data>
+  <data name="FillCompanyInfo" xml:space="preserve">
+    <value>Если Вы представляете компанию и хотите публиковать одежду Вашего бренда, заполните информацию о ней</value>
+  </data>
+  <data name="ItemProviders" xml:space="preserve">
+    <value>Информация о точках продаж или филиалах</value>
+  </data>
+  <data name="ItemProvidersDescription" xml:space="preserve">
+    <value>Нам нужна эта информация чтобы показывать Ваши точки продаж в выбранных городах.</value>
+  </data>
+  <data name="MainCompanyUrl" xml:space="preserve">
+    <value>Основной Сайт Компании</value>
+  </data>
+  <data name="MainCompanyUrlLenghtLimit" xml:space="preserve">
+    <value>Поле Основной Сайт Компании должно быть не больше 255.</value>
+  </data>
+  <data name="ManageWeatherEventSubscriptions" xml:space="preserve">
+    <value>Управление уведомлениями о погодных событиях</value>
+  </data>
+  <data name="NotificationsOnly" xml:space="preserve">
+    <value>Мы ценим Ваше время, поэтому рассылаем только уведомления о погодных изменениях. Никакого спама.</value>
+  </data>
+  <data name="NotifyMeAboutWeatherEvents" xml:space="preserve">
+    <value>Я хочу получать уведомления о резких погодных изменениях.</value>
+  </data>
+  <data name="SellCompanyUrl" xml:space="preserve">
+    <value>Сайт Продаж</value>
+  </data>
+  <data name="SellCompanyUrlLenghtLimit" xml:space="preserve">
+    <value>Поле Сайт Продаж должно быть не больше 255.</value>
+  </data>
+  <data name="DressRoom" xml:space="preserve">
+    <value>Гардероб</value>
+  </data>
+  <data name="ManageDressRoom" xml:space="preserve">
+    <value>Управление гардеробом</value>
+  </data>
+  <data name="SpecialNotes" xml:space="preserve">
+    <value>Выбор одежды произведён согласно следующим рекомендациям:</value>
+  </data>
+  <data name="ItemDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ItemDescription" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ItemDetails" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="ItemImage" xml:space="preserve">
+    <value>Фотография</value>
+  </data>
+  <data name="ItemAdd" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="ItemEdit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="ItemLocalDescription" xml:space="preserve">
+    <value>Описание (на родном языке)</value>
+  </data>
+  <data name="ItemLocalName" xml:space="preserve">
+    <value>Название (на родном языке)</value>
+  </data>
+  <data name="ItemName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="MadeBy" xml:space="preserve">
+    <value>Производитель</value>
+  </data>
+  <data name="ProvideBy" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="ArmoringPercent" xml:space="preserve">
+    <value>Бронь (%)</value>
+  </data>
+  <data name="IceProtection" xml:space="preserve">
+    <value>Шипы</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>Картинка</value>
+  </data>
+  <data name="MaxAge" xml:space="preserve">
+    <value>Максимальный возраст</value>
+  </data>
+  <data name="MinAge" xml:space="preserve">
+    <value>Минимальный возраст</value>
+  </data>
+  <data name="Season" xml:space="preserve">
+    <value>Выберите сезон</value>
+  </data>
+  <data name="SuggestionTermsTemperature" xml:space="preserve">
+    <value>Фактор температуры</value>
+  </data>
+  <data name="SunProtectionPercent" xml:space="preserve">
+    <value>Защита от солнца (%)</value>
+  </data>
+  <data name="WaterProtectionPercent" xml:space="preserve">
+    <value>Водоотталкивание (%)</value>
+  </data>
+  <data name="YearLine" xml:space="preserve">
+    <value>Модельный год</value>
+  </data>
+  <data name="ACTIVE_COOLING" xml:space="preserve">
+    <value>Лёгкая одежда с активными компонентами охлаждения</value>
+  </data>
+  <data name="ACTIVE_HEAT" xml:space="preserve">
+    <value>Очень тёплая согревающая одежда с активными компонентами</value>
+  </data>
+  <data name="ANIMALS_PROTECTION" xml:space="preserve">
+    <value>Защита от диких животных</value>
+  </data>
+  <data name="EYE_PROTECTION" xml:space="preserve">
+    <value>Защита глаз (от ветра и т.д.)</value>
+  </data>
+  <data name="FACE_PROTECTION" xml:space="preserve">
+    <value>Защита лица (от ветра и т.д.)</value>
+  </data>
+  <data name="INSECTS_PROTECTION" xml:space="preserve">
+    <value>Защита от насекомых</value>
+  </data>
+  <data name="LIFE_PROTECTION" xml:space="preserve">
+    <value>Защита жизни</value>
+  </data>
+  <data name="LIGHT_HEAT" xml:space="preserve">
+    <value>Одежда для прохладной погоды</value>
+  </data>
+  <data name="NO_PROTECTION" xml:space="preserve">
+    <value>Очень лёгкая одежда для идеальных условий</value>
+  </data>
+  <data name="RADIATION_PROTECTION" xml:space="preserve">
+    <value>Защита от радиации</value>
+  </data>
+  <data name="STATIC_COOLING" xml:space="preserve">
+    <value>Легкая летняя одежда</value>
+  </data>
+  <data name="STATIC_HEAT" xml:space="preserve">
+    <value>Тёплая зимняя одежда</value>
+  </data>
+  <data name="SuggestionTermsAdditional" xml:space="preserve">
+    <value>Дополнительная защита</value>
+  </data>
+  <data name="SuggestionTermsExtra" xml:space="preserve">
+    <value>Внешние факторы</value>
+  </data>
+  <data name="SUN_PROTECTION" xml:space="preserve">
+    <value>Защита головы или глаз от солнца</value>
+  </data>
+  <data name="SWIMMING_TOOLS" xml:space="preserve">
+    <value>Одежда для купания</value>
+  </data>
+  <data name="WATER_PROTECTION" xml:space="preserve">
+    <value>Защита от дождя и/или влаги</value>
+  </data>
+  <data name="SuggestionFactors" xml:space="preserve">
+    <value>Опишите Вашу одежду выбрав соотвествующие категории (обязательные категории помечены звёздочкой *)</value>
+  </data>
+  <data name="ActionType" xml:space="preserve">
+    <value>Для чего одеть эту вещь</value>
+  </data>
+  <data name="IsPublic" xml:space="preserve">
+    <value>Другие пользователи могут видеть Вашу одежду в своих рекомендациях?</value>
+  </data>
+  <data name="WhatWearIn2Weeks" xml:space="preserve">
+    <value>Что одеть через две недели</value>
+  </data>
+  <data name="WhatWearToday" xml:space="preserve">
+    <value>Ежедневный прогноз</value>
+  </data>
+  <data name="WhatWearTomorrow" xml:space="preserve">
+    <value>Что одеть завтра</value>
+  </data>
+  <data name="PlanTheTrip" xml:space="preserve">
+    <value>Посмотрите,что одеть для путешествия в любой город мира</value>
+  </data>
+  <data name="WishList" xml:space="preserve">
+    <value>Понравилось</value>
+  </data>
+  <data name="Ages" xml:space="preserve">
+    <value>Возраст</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>Броня</value>
+  </data>
+  <data name="ItIsNotPublic" xml:space="preserve">
+    <value>Одежда НЕ ВИДНА больше никому</value>
+  </data>
+  <data name="ItIsPublic" xml:space="preserve">
+    <value>Одежда видна всем в рекомендациях</value>
+  </data>
+  <data name="ModelBy" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="SunProtection" xml:space="preserve">
+    <value>Солнцезащита</value>
+  </data>
+  <data name="WaterProtection" xml:space="preserve">
+    <value>Водоотталкивание</value>
+  </data>
+  <data name="YearLabel" xml:space="preserve">
+    <value>г.</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="Seasons" xml:space="preserve">
+    <value>Сезон</value>
+  </data>
+  <data name="AddDress" xml:space="preserve">
+    <value>Добавление вещи</value>
+  </data>
+  <data name="EditDress" xml:space="preserve">
+    <value>Редактирование вещи</value>
+  </data>
+  <data name="InDevelopment" xml:space="preserve">
+    <value>В разработке</value>
+  </data>
+  <data name="CleverWearerDescription" xml:space="preserve">
+    <value>Мы помогаем &lt;i&gt;одеться по погоде&lt;/i&gt; и &lt;i&gt;спланировать гардероб&lt;/i&gt; для путешествия, а также &lt;i&gt;заранее предупреждаем о сюпризах природы&lt;/i&gt;.</value>
+  </data>
+  <data name="ForFree" xml:space="preserve">
+    <value>БЕСПЛАТНО</value>
+  </data>
+  <data name="CleverWearerEnterHeader" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="CleverWearerFunctions" xml:space="preserve">
+    <value>- Подсказываем какую одежду из вашего гардероба лучше одеть в такую погоду&lt;br&gt;
+- Подсказываем где можно приобрести одежду в вашем городе&lt;br&gt;
+- Сообщаем по E-mail о резких изменениях погоды&lt;br&gt;
+- Подсказываем что взять с собой в путешествие или командировку в любое место на Земле</value>
+  </data>
+  <data name="CleverWearerFunctionsHeader" xml:space="preserve">
+    <value>Что у нас есть для вас?</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>- ИЛИ -</value>
+  </data>
+  <data name="Fri" xml:space="preserve">
+    <value>Пт</value>
+  </data>
+  <data name="Mon" xml:space="preserve">
+    <value>Пн</value>
+  </data>
+  <data name="Sat" xml:space="preserve">
+    <value>Сб</value>
+  </data>
+  <data name="Sun" xml:space="preserve">
+    <value>Вс</value>
+  </data>
+  <data name="Thu" xml:space="preserve">
+    <value>Чт</value>
+  </data>
+  <data name="Tue" xml:space="preserve">
+    <value>Вт</value>
+  </data>
+  <data name="Wed" xml:space="preserve">
+    <value>Ср</value>
+  </data>
+  <data name="CleverWearerFutureFunctionsHeader" xml:space="preserve">
+    <value>Что ЕЩЁ у нас скоро появится?</value>
+  </data>
+  <data name="CleverWearerMoney" xml:space="preserve">
+    <value>Деньги?</value>
+  </data>
+  <data name="AssociateSocialAccount" xml:space="preserve">
+    <value>Регистрация через внешний аккаунт</value>
+  </data>
+  <data name="NoItems" xml:space="preserve">
+    <value>К сожалению, по вашему запросу ничего не найдено. Попробуйте задать другие условия фильтра.</value>
+  </data>
+  <data name="NoMoreCities" xml:space="preserve">
+    <value>Если вам действительно нужно больше городов в списке, скажите нам об этом: cleverwearer@gmail.com</value>
+  </data>
+  <data name="Calculations" xml:space="preserve">
+    <value>Подыскиваем одежду под погоду...</value>
+  </data>
+  <data name="CreateLook" xml:space="preserve">
+    <value>Создать лук</value>
+  </data>
+  <data name="EditWardrobe" xml:space="preserve">
+    <value>Править гардероб</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Поделиться</value>
+  </data>
+  <data name="SendNewPassword" xml:space="preserve">
+    <value>Отправить новый пароль</value>
+  </data>
+  <data name="RefreshToken" xml:space="preserve">
+    <value>Токен не совпадает или устарел.</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Если вам понравился наш сайт вы можете помочь нам улучшить его отправив нам любую сумму на </value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>PayPal</value>
+  </data>
+  <data name="SmartClothesFeed" xml:space="preserve">
+    <value>Умная одежда</value>
+  </data>
+  <data name="SmartDevicesFeed" xml:space="preserve">
+    <value>Новости носимых устройств</value>
+  </data>
+  <data name="SmartStartupsFeed" xml:space="preserve">
+    <value>Новые компании</value>
+  </data>
+  <data name="ToFullFeed" xml:space="preserve">
+    <value>Далее...</value>
+  </data>
+  <data name="MoreButton" xml:space="preserve">
+    <value>Подобрать другую одежду...</value>
+  </data>
+  <data name="VisitVendorButton" xml:space="preserve">
+    <value>Полные коллекции на сайте вендора</value>
+  </data>
+</root>

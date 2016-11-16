@@ -1,0 +1,27 @@
+﻿@using Phi.MobileWebApp.Resources
+@model Phi.MobileWebApp.Models.RegisterViewModel
+@{
+    ViewBag.Title = GlobalResources.RegisterPage;
+}
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "regForm", role = "form" }))
+{
+    <h4>@ViewBag.Title.</h4>
+    @Html.AntiForgeryToken()
+    
+    @Html.ValidationSummary("", new { @class = "textDanger" })
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    @*@Html.LabelFor(m => m.Hometown, new { @class = "col-md-2 control-label" })
+      @Html.TextBoxFor(m => m.Hometown, new { @class = "form-control" })*@
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+    <input type="submit" class="btn btn-default" value="Register" />
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

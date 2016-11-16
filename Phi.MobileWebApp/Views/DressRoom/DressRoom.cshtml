@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Phi.MobileWebApp.Models.ItemViewModel>
+@using Phi.MobileWebApp.Resources
+@using Phi.Repository.Extensions
+
+@{
+    ViewBag.Title = GlobalResources.DressRoom;
+}
+<script>
+    var jsError = "@GlobalResources.JSError"
+</script>
+
+<script src="~/Scripts/Common.js?v=3"></script>
+<script src="~/Scripts/jquery-ui.min-1.11.1.js"></script>
+<script src="~/Scripts/jquery.cookie.js"></script>
+<div class="dressRoom">
+    <h3>@GlobalResources.DressRoom</h3>
+
+    <p>
+        @Html.ActionLink(GlobalResources.ItemAdd, "ManageDress", "Dress", new { @type = "button", @class = "btn createSetButton" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @GlobalResources.ItemImage
+            </th>
+            <th>
+                @GlobalResources.Gender
+            </th>
+            <th>
+                @GlobalResources.ItemDescription
+            </th>
+            <th>
+                @GlobalResources.Seasons
+            </th>
+            <th>
+                @GlobalResources.MadeBy
+            </th>
+            <th>
+                @GlobalResources.ProvideBy
+            </th>
+            <th>
+                @GlobalResources.ItemDetails
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.ImageUrl" style="max-width:200px; max-height:200px;" />
+                    <br />
+                    @if (item.IsPublic)
+                    {
+                        @GlobalResources.ItIsPublic
+                    }
+                    else
+                    {
+                        @GlobalResources.ItIsNotPublic
+                    }
+                </td>
+                <td>
+                    <div class="btn-group col-md-5">
+                        @if (item.Gender != null)
+                        {
+                            if (item.Gender.Value)
+                            {
+                                <span class="fa fa-male"></span>
+                            }
+                            else
+                            {
+                                <span class="fa fa-female"></span>
+                            }
+                        }
+                    </div>
+                </td>
+                <td>
+                    <b>@item.Name</b><br />
+                    @item.Description
+                </td>
+                <td>
+                    <div class="btn-group col-md-5">
+                        @if (item.Season == 1)
+                        {
+                            <span class="glyph-icon flaticon-sandals2"></span>
+                        }
+                        @if (item.Season == 2)
+                        {
+                            <span class="glyph-icon flaticon-autumn1"></span>
+                        }
+                        @if (item.Season == 3)
+                        {
+                            <span class="glyph-icon flaticon-christmas144"></span>
+                        }
+                        @if (item.Season == 4)
+                        {
+                            <span class="glyph-icon flaticon-tree86"></span>
+                        }
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MadeBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProvideBy)
+                </td>
+                <td>
+                    @GlobalResources.ModelBy @item.Year @GlobalResources.YearLabel<br />
+                    @GlobalResources.WaterProtection @item.WaterProtectionPercent %<br />
+                    @GlobalResources.IceProtection @if (item.IceProtection)
+                    { <b>@GlobalResources.Yes</b> }
+                    else
+                    { <b>@GlobalResources.No</b> }<br />
+                    @GlobalResources.Armor @item.ArmoringPercent %<br />
+                    @GlobalResources.SunProtection @item.SunProtectionPercent %<br />
+                    @GlobalResources.Ages @item.MinAge - @item.MaxAge
+                </td>
+                <td>
+                    @Html.ActionLink(GlobalResources.ItemDelete, "DeleteDress", new { id = item.Id }) <br />
+                    @Html.ActionLink(GlobalResources.ItemEdit, "EditDress", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

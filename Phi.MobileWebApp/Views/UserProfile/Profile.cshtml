@@ -1,0 +1,124 @@
+﻿@model Phi.MobileWebApp.Models.ProfileViewModel
+@using Phi.MobileWebApp.Resources
+@using Phi.Repository.Extensions
+@{
+    ViewBag.Title = GlobalResources.Profile;
+}
+
+@Styles.Render("~/Content/profile")
+@*@Scripts.Render("~/bundles/profile")*@
+
+<script>
+    var jsError = "@GlobalResources.JSError"
+</script>
+<script src="~/Scripts/Common.js?v=3"></script>
+<script src="~/Scripts/jquery-ui.min-1.11.1.js"></script>
+<script src="~/Scripts/Profile.js?v=3"></script>
+<script>
+    $(function () {
+        $("#divGender :button").click(function () {
+            $("#divGender :button").removeClass('active');
+            $(this).addClass('active');
+            if ($(this).children().hasClass('fa-male')) {
+                $("#Gender").val('true');
+            }
+            else {
+                $("#Gender").val('false');
+            }
+        });
+    });
+</script>
+
+<div class="profileEditContainer">
+    <h3>@GlobalResources.TellUs</h3>
+
+    @Html.ActionLink(GlobalResources.ManageAccount, "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false)
+        <div class="profileEdit">
+            <div class="col-md-7 grayed-text">@GlobalResources.RequiredProfileInfo</div>
+        </div>
+    <div id="divGender" class="profileEdit">
+        <div class="title">@GlobalResources.Gender </div>
+        @Html.HiddenFor(model => model.Gender)
+        <div class="divGender">
+            @if (Model.Gender != null)
+            {
+                if (Model.Gender.Value)
+                {
+                    <button type="button"><span class="fa fa-female"></span></button>
+                    <button type="button" class="active"><span class="fa fa-male"></span></button>
+                }
+                else
+                {
+                    <button type="button" class="active"><span class="fa fa-female"></span></button>
+                    <button type="button"><span class="fa fa-male"></span></button>
+                }
+            }
+            else
+            {
+                <button type="button"><span class="fa fa-female"></span></button>
+                <button type="button"><span class="fa fa-male"></span></button>
+            }
+        </div>
+    </div>
+
+        <div class="profileEdit">
+            @Html.HiddenFor(model => model.IsCheckedLocation)
+            <div class="title">@GlobalResources.Location </div>
+            <div class="inpCont">@Html.TextBoxFor(x => x.Location, new { @placeholder = GlobalResources.PleaseTypeYourLocation })</div>
+            <div class="title">@GlobalResources.Nickname </div>
+            <div class="inpCont">@Html.TextBoxFor(x => x.UserName)</div>
+            <div class="grayed-text">@GlobalResources.RecommendedProfileInfo</div>
+            <div class="title">@GlobalResources.FirstName </div>
+            <div class="inpCont">@Html.TextBoxFor(x => x.FirstName)</div>
+            <div class="title">@GlobalResources.LastName </div>
+            <div class="inpCont">@Html.TextBoxFor(x => x.LastName)</div>
+            <div class="title">@GlobalResources.AvatarPicture </div>
+            <div class="avatar" ondrop="drop(event);">
+                @{
+        if (!String.IsNullOrEmpty(Model.AvatarPictureUrl))
+        {
+            <img class="avatar-ico" src="@Model.AvatarPictureUrl" width="98" height="98" />
+        }
+                }
+            </div>
+            <div class="inpCont"><input  id="avatar" type="file" /></div>
+            @*multiple*@
+            @*<div class="col-md-2">
+                    <button class="btn" name="button">@GlobalResources.UploadButton</button>
+                    <div class="small-font grayed-text">@GlobalResources.UseDragAndDrop</div>
+                </div>*@
+        </div>
+        <div class="profileEdit">
+            <div class="title"></div>
+            <div class="inpCont">
+                <br />
+                <input id="uploadButton" type="button" value="@GlobalResources.UploadButton" />
+                @*<button class="btn" name="button">@GlobalResources.UploadButton</button>*@
+            </div>
+        </div>
+    <div class="profileEdit">
+        <div class="grayed-text">@GlobalResources.WhatDoWeKnow</div>
+    </div>
+    <div class="profileEdit">
+        <div class="title">@GlobalResources.Email </div>
+        <div class="inpCont">@Html.DisplayTextFor(x => x.Email)</div>
+    </div>
+    <div class="profileEdit">
+        <div class="title">@GlobalResources.ProfileCreated </div>
+        <div class="inpCont">@Html.DisplayTextFor(x => x.DateCreated)</div>
+    </div>
+        <br />
+    <div class="profileEdit">
+        <div class="title">
+            <button  name="button" type="submit">@GlobalResources.AdvancedProfileSettings <span class="icon-arrow-next icon-white"></span></button>
+            @Html.ActionLink(GlobalResources.Cancel, "Cancel")
+        </div>
+    </div>
+
+    }
+</div>

@@ -1,0 +1,342 @@
+﻿@model Phi.MobileWebApp.Models.MainViewModel
+@using Phi.MobileWebApp.Resources
+@using Phi.Models.Models
+@using Phi.Repository.Extensions
+@using Phi.Repository.Services
+
+@*@Scripts.Render("~/bundles/mainview")*@
+@Styles.Render("~/Content/mainview")
+
+<script src="~/Scripts/Common.min.js?v=4"></script>
+<script src="~/Scripts/MainView.min.js?v=14"></script>
+
+@*<script src="~/Scripts/MainView.js?v=13"></script>*@
+<script src="~/Scripts/jquery-ui.min-1.11.1.js"></script>
+<script src="~/Scripts/jquery.cookie.js"></script>
+<script src="~/Scripts/bootstrap-select.min.js"></script>
+<script type="text/javascript"
+        async defer
+        src="//assets.pinterest.com/js/pinit.js"></script>
+
+<script type="text/javascript">
+    var dontDeleteCity = "@GlobalResources.DontDeleteCity";
+    var pleaseTypeUniqueLocation = "@GlobalResources.PleaseTypeUniqueLocation";
+    var noMoreCities = "@GlobalResources.NoMoreCities";
+    var jsError = "@GlobalResources.JSError";
+    var jsForecastError = "Forecast dates was not loaded!";
+    var specialNotes = "";
+    var pleaseWait = "@GlobalResources.PleaseWait";
+
+    (function () {
+        if (window.pluso) if (typeof window.pluso.start == "function") return;
+        if (window.ifpluso == undefined) {
+            window.ifpluso = 1;
+            var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+            s.type = 'text/javascript'; s.charset = 'UTF-8'; s.async = true;
+            s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
+            var h = d[g]('body')[0];
+            h.appendChild(s);
+        }
+    })();
+</script>
+
+<link href="~/Content/bootstrap-select.min.css" rel="stylesheet">
+
+
+<!-- Template is used for adding location by client javascript by copying this template. -->
+<div id="SelectedLocation" class="selectedLocation" style="display: none;">
+    <div class="selectedContent" onclick="SetActiveLocation(this.parentNode);"></div>
+    <div class="selectedClose" onclick="CloseSelected(this.parentNode);">&#215;</div>
+</div>
+<!-- End tempalte -->
+<!-- Template is used for adding suggestion to suggestions panel. -->
+<div id="SuggestionItemTemplate" class="suggestion-item" style="display: none;">
+    <div class="suggestion-item-info" style="display: none;">
+        <div class="suggestionTitle">
+            <div class="suggestion-item-vendor"></div>
+            <div class="suggestion-item-price"></div>
+        </div>
+    </div>
+    <div class="suggestion-item-title"></div>
+    <div class="popover-content suggestion-item-content"><a href="#"><img src="" class="suggestion-item-image" /></a></div>
+</div>
+<!-- End tempalte -->
+<!-- Template for forecast hyperlink -->
+<div id="SuggestionTodayTemplate" class="suggestion-header" style="display: none;"><a href="#"></a></div>
+<!-- End tempalte -->
+
+
+<div class="columnWrapper">
+    <aside class="sidebar1">
+        <!-- Panel for adding location -->
+        <div id="SelectedLocationContainer" class="SelectedLocationContainer">
+            @Html.TextBoxFor(x => x.Location, new { @placeholder = @GlobalResources.PleaseTypeYourLocation, @maxlength = "255" })
+
+            <div class="instaBlock">
+               @* <div class="title"><a target="_blank" href="https://instagram.com/">Instagram for selected city:</a></div>
+                <div id="instafeed" class="instafeed"></div>*@
+            </div>
+        </div>
+        <!-- End Panel -->
+
+    </aside>
+    <article class="main">
+        <!-- Panel with weather conditions -->
+        <div class="weatherContent">
+            <div class="weatherDescription"></div>
+            <div class="tempIconCont">
+                <div class="weatherIcon"><img class="weatherConditionIcon" src="img/sun.svg"></div>
+                <div class="temp">
+                    <div class="eftemperature" title="@GlobalResources.FeelsLike"></div>
+                    <div class="system"></div>
+                    <div class="minmax">
+                        <div class="tempmax">19°C</div>
+                        <div class="tempmin">10°C</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="forecastsDates">
+            <div id="SuggestionForecasts"></div>
+            <br />
+            <div id="SpecialNotes" class="SpecialNotes"></div>
+        </div>
+        <div class="weatherPanel">
+            <div class="humidity view" title="@GlobalResources.Humidity">
+                <span class="subTitle">@GlobalResources.Humidity</span>
+                <br />
+                <span class="subValue"></span>
+            </div>
+            <div class="windspeed view" title="@GlobalResources.WindSpeed">
+                <span class="subTitle">@GlobalResources.WindSpeed</span>
+                <br />
+                <span class="subValue"></span>
+                <span class="subDesc"></span>
+            </div>
+            <div class="pressure view" title="@GlobalResources.Pressure">
+                <span class="subTitle">@GlobalResources.Pressure</span>
+                <br />
+                <span class="subValue"></span>
+                <br />
+                <span class="subDesc"></span>
+            </div>
+            @*<div class="visibility view" title="@GlobalResources.Visibility">
+                    <span class="subTitle">@GlobalResources.Visibility</span>
+                    <br />
+                    <span class="subValue"></span>
+                    <span class="subDesc"></span>
+                </div>*@
+            <div class="sunrise view" title="@GlobalResources.Sunrise">
+                <span class="subTitle">@GlobalResources.Sunrise</span>
+                <br />
+                <span class="subValue"></span>
+            </div>
+            <div class="sunset view" title="@GlobalResources.Sunset">
+                <span class="subTitle">&nbsp;&nbsp;@GlobalResources.Sunset</span>
+                <br />
+                <span class="subValue"></span>
+            </div>
+            @*<div class="weather-condition rising"></div>
+                <div class="weather-condition provider"></div>*@
+        </div>
+        <!-- End Panel -->
+        <div class="notesForShare">
+            <div id="SuggestionNotes">
+                <select id="commonSuggestionTypes" class="selectpicker">
+                    @foreach (string item in Model.CommonSuggestionTypes)
+                    {
+                        <option data="@item.ToLower()">
+                            @CommonSuggestionItem.GetTypeName(
+                                        (CommonSuggestionType)Enum.Parse(typeof(CommonSuggestionType), item),
+                                        Model.Language)
+                        </option>
+                    }
+                </select>
+                <ul id="FullSuggestionNotes" class="FullSuggestionNotes"></ul>
+            </div>
+        </div>
+        <div class="shareButtons">
+            <div class="shareLabel">
+                <div>@GlobalResources.Share<br />↓</div>
+                <div>
+                    @if (GlobalResources.CurrentLang == "ru")
+                    {
+                        <div class="pluso"
+                             data-lang="ru"
+                             data-background="transparent"
+                             data-options="medium,round,line,horizontal,nocounter,theme=06"
+                             data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"
+                             data-url="http://cleverwearer.com/"
+                             data-title=""
+                             data-description=""></div>
+                    }
+                    else
+                    {
+                        <div class="pluso"
+                             data-lang="en"
+                             data-background="transparent"
+                             data-options="medium,round,line,horizontal,nocounter,theme=06"
+                             data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"
+                             data-url="http://cleverwearer.com/"
+                             data-title=""
+                             data-description=""></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+<aside class="sidebar2">
+    <!-- Panel with Pinterest recomendations -->
+    <div class="suggestions-panel">
+        <ul id="mainTab" class="mainTab">
+            @if (GlobalResources.CurrentLang == "en")
+            {
+                <li class="active"><a href="#autumn" data-toggle="tab">Autumn</a></li>
+                <li><a href="#winter" data-toggle="tab">Winter</a></li>
+                <li><a href="#spring" data-toggle="tab">Spring</a></li>
+                <li><a href="#summer" data-toggle="tab">Summer</a></li>
+            }
+            else
+            {
+                <li class="active"><a href="#autumn" data-toggle="tab">Осень</a></li>
+                <li><a href="#winter" data-toggle="tab">Зима</a></li>
+                <li><a href="#spring" data-toggle="tab">Весна</a></li>
+                <li><a href="#summer" data-toggle="tab">Лето</a></li>
+            }
+        </ul>
+        <div class="panel-body suggestions-panel-conent">
+            <div class="tab-content">
+                <div class="tab-pane" id="autumn">
+                    <div>
+                        <a href="https://ru.pinterest.com/fashion/autumn"
+                           data-pin-do="embedBoard"
+                           data-pin-board-width="250"
+                           data-pin-scale-height="500"
+                           data-pin-scale-width="100">
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="winter">
+                    <div>
+                        <a href="https://ru.pinterest.com/fashion/winter"
+                           data-pin-do="embedBoard"
+                           data-pin-board-width="250"
+                           data-pin-scale-height="500"
+                           data-pin-scale-width="100">
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="spring">
+                    <div>
+                        <a href="https://ru.pinterest.com/fashion/spring"
+                           data-pin-do="embedBoard"
+                           data-pin-board-width="250"
+                           data-pin-scale-height="500"
+                           data-pin-scale-width="100">
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="summer">
+                    <div>
+                        <a href="https://ru.pinterest.com/fashion/summer"
+                           data-pin-do="embedBoard"
+                           data-pin-board-width="250"
+                           data-pin-scale-height="500"
+                           data-pin-scale-width="100">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<div class="clothesColumnWrapper">
+    <!-- Panel with recomendations -->
+    <div class="clothes-progress-bar">
+        @GlobalResources.Calculations
+        <div id="progress-bar">
+        </div>
+    </div>
+    <div class="clothes-panel" style="visibility: hidden; opacity: 0.0;">
+        <select id="actiontypes" class="selectpicker">
+            @foreach (var item in Model.ActionTypes)
+            {
+                <option data="@item.Name.RemoveSpecialSymbols().ToLower()">@item.Name</option>
+            }
+        </select>
+        @*
+        <select id="clothingtypes" class="selectpicker">
+            @foreach (int itemId in Model.ItemTypes.Keys)
+            {
+                <option data="ClothingType_@itemId">@Model.ItemTypes[itemId]</option>
+            }
+        </select>*@
+        @*TODO Temporary hide. Because we have no correctly mapped data*@
+        @*<div id="divGender" class="btn-group">
+            <button type="button" class="btn btn-default"><span class="fa fa-female"></span></button>
+            <button type="button" class="btn btn-default"><span class="fa fa-male"></span></button>
+        </div>*@
+        <div class="listview-wrapper">
+        </div>
+        <div class="no-items-label">
+            @GlobalResources.NoItems
+        </div>
+        <div class="more-panel">
+            <a href="#" onclick="" class="moreButton">@GlobalResources.MoreButton</a>
+        </div>
+        <div class="more-panel">
+            <a href="http://www.shopstyle.co.uk/collective/cleverwearer" target="_blank">@GlobalResources.VisitVendorButton</a>
+        </div>
+        @*<div class="pager-wrapper">
+        </div>*@
+    </div>
+</div>
+
+<div class="feedColumnWrapper">
+    <div class="row-fluid">
+        <span class="feed-block">
+            <div class="newsItemHeader">
+                @GlobalResources.SmartClothesFeed
+            </div>
+            @foreach (Blog newsItem in Model.NewsClothesItems)
+        {
+                <div class="newsItem">
+                    <a class="newsItemLink" href="@newsItem.SourceUrl">@newsItem.Header</a> - @newsItem.ProviderName
+                </div>
+            }
+            <div class="newsItemFooter">
+                <a href="#">@GlobalResources.ToFullFeed</a>
+            </div>
+        </span>
+        <span class="feed-block">
+            <div class="newsItemHeader">
+                @GlobalResources.SmartDevicesFeed
+            </div>
+            @foreach (Blog newsItem in Model.NewsDevicesItems)
+        {
+                <div class="newsItem">
+                    <a class="newsItemLink" href="@newsItem.SourceUrl">@newsItem.Header</a> - @newsItem.ProviderName
+                </div>
+            }
+            <div class="newsItemFooter">
+                <a href="#">@GlobalResources.ToFullFeed</a>
+            </div>
+        </span>
+        <span class="feed-block">
+            <div class="newsItemHeader">
+                @GlobalResources.SmartStartupsFeed
+            </div>
+            @foreach (Blog newsItem in Model.NewsStatupsItems)
+        {
+                <div class="newsItem">
+                    <a class="newsItemLink" href="@newsItem.SourceUrl">@newsItem.Header</a> - @newsItem.ProviderName
+                </div>
+            }
+            <div class="newsItemFooter">
+                <a href="#">@GlobalResources.ToFullFeed</a>
+            </div>
+        </span>
+    </div>
+</div>

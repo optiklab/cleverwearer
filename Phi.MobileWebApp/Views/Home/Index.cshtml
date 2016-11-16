@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Clever wearer";
+}
+@section SPAViews {
+    @*@Html.Partial("_Home")*@
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="phi-header">
+</div>
+
+<div class="row-fluid">
+
+    @{ Html.RenderAction("MainView", "Home");}
+
+</div>

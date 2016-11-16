@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNet.Identity
+@using Phi.MobileWebApp.Resources
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    @Html.ActionLink(String.Format(GlobalResources.HelloUserFormat, User.Identity.GetUserName()), "Profile", "UserProfile", routeValues: null, htmlAttributes: new { title = GlobalResources.Profile })
+    <a href="javascript:sessionStorage.removeItem('accessToken');$('#logoutForm').submit();">@GlobalResources.LogOff</a>
+    }
+}
+else
+{
+    @Html.ActionLink(GlobalResources.Register, "Register", "Account", routeValues: new { area = "" }, htmlAttributes: new { id = "registerLink" })
+    @Html.ActionLink(GlobalResources.LogIn, "Login", "Account", routeValues: new { area = "" }, htmlAttributes: new { id = "loginLink" })
+}
