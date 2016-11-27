@@ -4,6 +4,8 @@ I built a project which you can find publicly in 'http://cleverwearer.com'. This
 
 http://cleverwearer.com
 
+![1](https://optiklab.github.io/blog/img/cleverwearer.jpg)
+
 I built it with ASP.NET MVC + WebAPI engine, it continues to grow and I have lots of ideas to implement. So, please visit it and share with me any suggestions, comments, etc.
 
 ![](http://cleverwearer.com/img/CleverWearerIcon_48px.png)
